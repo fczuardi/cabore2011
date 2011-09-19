@@ -2,6 +2,60 @@ body{
   background-color:#4e9b70;
   background-image:url(../img/micro-bg.png);
 }
+html.ie6 body{
+  background-image:url(../img/micro-bg-verde-IE.png);
+}
+#container{
+  width:820px;
+  margin:auto;
+  min-height:639px;
+  background-image:url(../img/referencia.png);
+  background-repeat:no-repeat;
+  background-position:top center;
+  position:relative;
+}
+
+header{
+  height:188px;
+}
+#main{
+  min-height:311px;
+  width:704px;
+  margin:auto;
+  background-color:orange;
+  opacity:0.5;
+  border:2px solid #fff;
+  border-radius:12px;
+  moz-border-radius:12px;
+  webkit-border-radius:12px;
+}
+html.ie6 #main{
+  height:311px;
+}
+
+footer{
+  height:185px;
+}
+
+#header-logo{
+  width:108px;
+  height:140px;
+  left:60px;
+  margin-top:27px;
+  float:left;
+  position:relative;
+  background-image:url(../img/logo.png);
+  background-repeat:no-repeat;
+}
+html.ie6 #header-logo{
+  background-image:url(../img/logo-verde-IE.gif);
+}
+nav{
+  float:left;
+  left:90px;
+  margin-top:80px;
+  position:relative;
+}
 
 /*Sombra na mesa (divs inseridos via javascript variavel sombra_bg)*/
 #sombra-top, 
@@ -15,3 +69,8 @@ body{
 #sombra-bottom img{ width:100%; }
 #sombra-top img{ height:332px; }
 #sombra-bottom img{ height:692px; }
+
+html, body {
+height: 100%;
+min-height: 100%;
+}
