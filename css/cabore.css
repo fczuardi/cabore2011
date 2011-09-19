@@ -16,11 +16,13 @@ body{
 html.ie6 body{
   background-image:url(../img/micro-bg-verde-IE.png);
 }
+
+/************** LAYOUT ********************/
 #container{
   width:820px;
   margin:auto;
   min-height:639px;
-  background-image:url(../img/referencia.png);
+/*  background-image:url(../img/referencia.png);*/
   background-repeat:no-repeat;
   background-position:top center;
   position:relative;
@@ -33,8 +35,6 @@ header{
   min-height:311px;
   width:704px;
   margin:auto;
-  background-color:orange;
-  opacity:0.5;
   border:2px solid #fff;
   border-radius:12px;
   moz-border-radius:12px;
@@ -43,11 +43,11 @@ header{
 html.ie6 #main{
   height:311px;
 }
-
 footer{
   height:185px;
 }
 
+/************** HEADER ********************/
 #header-logo{
   width:108px;
   height:140px;
@@ -87,6 +87,59 @@ html.notie nav a.vegas:before {
 }
 html.notie nav a.vegas:after {
   content: ' ✶';
+}
+
+
+/************** FICHAS ********************/
+
+.ficha{
+  width:123px;
+  height:123px;
+  background-image:url(../img/ficha.png);
+  position:absolute;
+  left:50%;
+  margin-left:-61px;
+  top:-123px;
+}
+html.ie6 .ficha{
+  background-image:url(../img/ficha-verde-IE.gif);
+}
+.ficha.animacao{
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.ficha.animacao.sai{
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition:    all 0.3s ease-in;
+  -o-transition:      all 0.3s ease-in;
+  -ms-transition:     all 0.3s ease-in;
+  transition:         all 0.3s ease-in;
+}
+#ficha-0.ficha.animacao{
+  -webkit-transition-duration:  0.7s;
+  -moz-transition-duration:     0.7s;
+  -o-transition-duration:       0.7s;
+  -ms-transition-duration:      0.7s;
+  transition-duration:          0.7s;
+}
+#ficha-1.ficha.animacao{
+  -webkit-transition-duration:  0.5s;
+  -moz-transition-duration:     0.5s;
+  -o-transition-duration:       0.5s;
+  -ms-transition-duration:      0.5s;
+  transition-duration:          0.5s;
+}
+#ficha-0{
+  z-index:3;
+}
+#ficha-1{
+  z-index:2;
+}
+#ficha-2{
+  z-index:1;
 }
 /*Sombra na mesa (divs inseridos via javascript variavel sombra_bg)*/
 #sombra-top, 
