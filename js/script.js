@@ -20,9 +20,9 @@ function tweakContentForIE(){
   }
 }
 function addShadow(){
-  var is_ie_6 = html_element.hasClass('ie6');
-  if (!is_ie_6){ 
-    body_element.append(sombra_bg); 
+  var is_ie_6_or_7 = html_element.hasClass('ie6')||html_element.hasClass('ie7');
+  if (!is_ie_6_or_7){ 
+    body_element.prepend(sombra_bg); 
   }
 }
 
@@ -52,7 +52,7 @@ function init(){
   fichas_elements = [$('#ficha-0'),$('#ficha-1'),$('#ficha-2')];
   addBrowserClasses();
   tweakContentForIE();
-  // addShadow();
+  addShadow();
 }
 $(init);
 

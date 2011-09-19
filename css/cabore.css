@@ -19,7 +19,7 @@ html.ie6 body{
 
 /************** LAYOUT ********************/
 #container{
-  width:820px;
+  width:768px;
   margin:auto;
   min-height:639px;
 /*  background-image:url(../img/referencia.png);*/
@@ -29,6 +29,7 @@ html.ie6 body{
 }
 
 header{
+/*  background-color:rgba(255, 255, 0, 0.2);*/
   height:188px;
 }
 #main{
@@ -52,7 +53,7 @@ footer{
 #header-logo{
   width:108px;
   height:140px;
-  left:60px;
+  left:34px;
   margin-top:27px;
   float:left;
   position:relative;
@@ -64,14 +65,17 @@ html.ie6 #header-logo{
 }
 nav{
   float:left;
-  left:60px;
+  left:34px;
+  margin:0px;
   margin-top:84px;
   position:relative;
-  width:700px;
+/*  width:590px;*/
+  white-space:nowrap;
 }
 
 nav li{
   display:inline;
+  margin:0px;
   margin-left:29px;
 }
 html.ie nav li{
@@ -152,7 +156,7 @@ footer ul{
   position: relative;
   margin: 0px;
   padding: 0px;
-  padding-left: 135px;
+  padding-left: 110px;
   padding-top: 91px;
 }
 footer li{
@@ -171,35 +175,56 @@ footer li a{
   background-image:url(../img/patrocinadores/patrocinadores_01.png);
   width:51px;
 }
+html.ie6 #patrocinio-1{
+  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_01.gif);
+}
 #patrocinio-2{
   background-image:url(../img/patrocinadores/patrocinadores_02.png);
   width:115px;
+}
+html.ie6 #patrocinio-2{
+  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_02.gif);
 }
 #patrocinio-3{
   background-image:url(../img/patrocinadores/patrocinadores_03.png);
   width:62px;
 }
+html.ie6 #patrocinio-3{
+  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_03.gif);
+}
 #patrocinio-4{
   background-image:url(../img/patrocinadores/patrocinadores_04.png);
   width:88px;
+}
+html.ie6 #patrocinio-4{
+  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_04.gif);
 }
 #patrocinio-5{
   background-image:url(../img/patrocinadores/patrocinadores_05.png);
   width:77px;
 }
+html.ie6 #patrocinio-5{
+  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_05.gif);
+}
 #patrocinio-6{
   background-image:url(../img/patrocinadores/patrocinadores_06.png);
   width:108px;
+}
+html.ie6 #patrocinio-6{
+  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_06.gif);
 }
 #patrocinio-7{
   background-image:url(../img/patrocinadores/patrocinadores_07.png);
   width:46px;
 }
+html.ie6 #patrocinio-7{
+  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_07.gif);
+}
 /*Sombra na mesa (divs inseridos via javascript variavel sombra_bg)*/
 #sombra-top, 
 #sombra-bottom{
   width:100%;
-  position:absolute;
+  position:fixed;
 }
 #sombra-top{ top:0px; }
 #sombra-bottom{ bottom:0px; }
@@ -207,8 +232,3 @@ footer li a{
 #sombra-bottom img{ width:100%; }
 #sombra-top img{ height:332px; }
 #sombra-bottom img{ height:692px; }
-
-html, body {
-height: 100%;
-min-height: 100%;
-}
