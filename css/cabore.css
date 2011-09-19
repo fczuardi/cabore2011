@@ -1,4 +1,15 @@
+@font-face {
+    font-family: 'FlamaSemicondensedBasic';
+    src: url('../fonts/flamasemicondensed-basic-webfont.eot');
+    src: url('../fonts/flamasemicondensed-basic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/flamasemicondensed-basic-webfont.woff') format('woff'),
+         url('../fonts/flamasemicondensed-basic-webfont.ttf') format('truetype'),
+         url('../fonts/flamasemicondensed-basic-webfont.svg#FlamaSemicondensedBasic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
+  font-family: "FlamaSemicondensedBasic", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color:#4e9b70;
   background-image:url(../img/micro-bg.png);
 }
@@ -52,11 +63,31 @@ html.ie6 #header-logo{
 }
 nav{
   float:left;
-  left:90px;
-  margin-top:80px;
+  left:60px;
+  margin-top:84px;
   position:relative;
+  width:700px;
 }
 
+nav li{
+  display:inline;
+  margin-left:29px;
+}
+html.ie nav li{
+  margin-left:28px;
+}
+nav a{
+  text-decoration:none;
+  font-size:15px;
+  text-transform:uppercase;
+  color:#fff !important;
+}
+html.notie nav a.vegas:before {
+  content: '✶ ';
+}
+html.notie nav a.vegas:after {
+  content: ' ✶';
+}
 /*Sombra na mesa (divs inseridos via javascript variavel sombra_bg)*/
 #sombra-top, 
 #sombra-bottom{
