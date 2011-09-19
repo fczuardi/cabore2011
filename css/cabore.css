@@ -1,0 +1,17 @@
+body{
+  background-color:#4e9b70;
+  background-image:url(../img/micro-bg.png);
+}
+
+/*Sombra na mesa (divs inseridos via javascript variavel sombra_bg)*/
+#sombra-top, 
+#sombra-bottom{
+  width:100%;
+  position:absolute;
+}
+#sombra-top{ top:0px; }
+#sombra-bottom{ bottom:0px; }
+#sombra-top img, 
+#sombra-bottom img{ width:100%; }
+#sombra-top img{ height:332px; }
+#sombra-bottom img{ height:692px; }
