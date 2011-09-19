@@ -45,6 +45,7 @@ html.ie6 #main{
 }
 footer{
   height:185px;
+/*  background-color:rgba(255, 255, 0, 0.2);*/
 }
 
 /************** HEADER ********************/
@@ -140,6 +141,59 @@ html.ie6 .ficha{
 }
 #ficha-2{
   z-index:1;
+}
+
+/************ FOOTER *************/
+footer{
+  position: relative;
+}
+footer ul{
+  list-style:none;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 135px;
+  padding-top: 91px;
+}
+footer li{
+  display:block;
+  float:left;
+  overflow:hidden;
+  background-repeat:no-repeat;
+}
+footer li a{
+  display: block;
+  height: 42px;
+  margin-top: -21px;
+  width: 100%;  
+}
+#patrocinio-1{
+  background-image:url(../img/patrocinadores/patrocinadores_01.png);
+  width:51px;
+}
+#patrocinio-2{
+  background-image:url(../img/patrocinadores/patrocinadores_02.png);
+  width:115px;
+}
+#patrocinio-3{
+  background-image:url(../img/patrocinadores/patrocinadores_03.png);
+  width:62px;
+}
+#patrocinio-4{
+  background-image:url(../img/patrocinadores/patrocinadores_04.png);
+  width:88px;
+}
+#patrocinio-5{
+  background-image:url(../img/patrocinadores/patrocinadores_05.png);
+  width:77px;
+}
+#patrocinio-6{
+  background-image:url(../img/patrocinadores/patrocinadores_06.png);
+  width:108px;
+}
+#patrocinio-7{
+  background-image:url(../img/patrocinadores/patrocinadores_07.png);
+  width:46px;
 }
 /*Sombra na mesa (divs inseridos via javascript variavel sombra_bg)*/
 #sombra-top, 
