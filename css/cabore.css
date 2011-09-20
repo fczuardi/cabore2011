@@ -10,26 +10,34 @@
 }
 body{
   font-family: "FlamaSemicondensedBasic", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color:#4e9b70; /*vinho c85051*/
+  background-color:#2a543d; /*vinho 6c2b2c*/
   background-image:url(../img/micro-bg.png);
+  width:100%;
+}
+body.loaded{
+    background-color:#4e9b70; /*vinho c85051*/  
 }
 html.ie6 body{
   background-image:url(../img/micro-bg-verde-IE.png);
 }
 
 /************** LAYOUT ********************/
+#stage{
+  overflow:hidden;
+  position:relative;
+  height:1024px;
+}
 #container{
   width:768px;
   margin:auto;
   min-height:639px;
-/*  background-image:url(../img/referencia.png);*/
+/*  background-image:url(../img/ref-home.jpg);*/
   background-repeat:no-repeat;
   background-position:top center;
   position:relative;
 }
 
 header{
-/*  background-color:rgba(255, 255, 0, 0.2);*/
   height:188px;
 }
 #main{
@@ -40,6 +48,7 @@ header{
   border-radius:12px;
   moz-border-radius:12px;
   webkit-border-radius:12px;
+  position:relative;
 }
 html.ie6 #main{
   height:311px;
@@ -109,7 +118,7 @@ html.notie nav a.vegas:after {
 html.ie6 .ficha{
   background-image:url(../img/ficha-verde-IE.gif);
 }
-.ficha.animacao{
+.animacao-out{
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
@@ -146,6 +155,98 @@ html.ie6 .ficha{
 #ficha-2{
   z-index:1;
 }
+
+/************ CARDS **************/
+
+.card{
+  width:186px;
+  height:254px;
+  position:absolute;
+  background-repeat:no-repeat;
+  overflow: hidden;
+}
+.card a{
+  display: block;
+  width: 176px;
+  height: 265px;
+  margin-left: -32px;
+  margin-top: -46px;
+  outline: none;
+}
+.card.back{
+  background-image:url(../img/carta-verso.png);
+}
+.card.basica{
+  background-image:url(../img/carta-basica.png);
+}
+.card .content{
+  width:112px;
+  height:240px;
+  position:relative;
+  top:27px;
+  left:38px;
+  background-repeat:no-repeat;
+  background-position:0px 45px;
+}
+html.lte8 .card .content{
+  background-position:0px 0px;
+}
+.card .content.home{
+  background-image:url(../img/carta-img-home.png);
+}
+#carta-1{
+  left:150px;
+  top:52px;
+  opacity:0.0;
+  -moz-transform:rotate(-5deg);
+  -webkit-transform:rotate(-5deg);
+}
+#carta-0{
+  left:372px;
+  top:52px;
+  opacity:0.0;
+  -moz-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+}
+#carta-2{
+  left:258px;
+  top:52px;
+  opacity:0.0;
+}
+#carta-2.card.animacao{
+  opacity:1.0;
+}
+#carta-1.final{
+  left:140px;
+  top:32px;
+  opacity:1;
+  -moz-transform:rotate(-11deg);
+  -webkit-transform:rotate(-11deg);
+}
+#carta-0.final{
+  left:382px;
+  top:32px;
+  opacity:1;
+  -moz-transform:rotate(11deg);
+  -webkit-transform:rotate(11deg);
+}
+#carta-2.final{
+  top:32px;
+  opacity:1;
+}
+html.no-csstransforms #carta-0,
+html.no-csstransforms #carta-0.final{
+  top:35px;
+}
+html.no-csstransforms #carta-1,
+html.no-csstransforms #carta-1.final{
+  top:35px;
+}
+html.no-csstransforms #carta-2,
+html.no-csstransforms #carta-2.final{
+  top:25px !important;
+}
+
 
 /************ FOOTER *************/
 footer{
@@ -224,7 +325,7 @@ html.ie6 #patrocinio-7{
 #sombra-top, 
 #sombra-bottom{
   width:100%;
-  position:fixed;
+  position:absolute;
 }
 #sombra-top{ top:0px; }
 #sombra-bottom{ bottom:0px; }
