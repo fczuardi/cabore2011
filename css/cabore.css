@@ -10,7 +10,7 @@
 }
 body{
   font-family: "FlamaSemicondensedBasic", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color:#4e9b70;
+  background-color:#4e9b70; /*vinho c85051*/
   background-image:url(../img/micro-bg.png);
 }
 html.ie6 body{
