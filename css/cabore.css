@@ -11,14 +11,10 @@
 body{
   font-family: "FlamaSemicondensedBasic", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color:#2a543d; /*vinho 6c2b2c*/
-  background-image:url(../img/micro-bg.png);
   width:100%;
 }
 body.loaded{
     background-color:#4e9b70; /*vinho c85051*/  
-}
-html.ie6 body{
-  background-image:url(../img/micro-bg-verde-IE.png);
 }
 
 /************** LAYOUT ********************/
@@ -26,6 +22,7 @@ html.ie6 body{
   overflow:hidden;
   position:relative;
   height:1024px;
+  background-image:url(../img/micro-bg.png);
 }
 #container{
   width:768px;
@@ -69,9 +66,6 @@ footer{
   background-image:url(../img/logo.png);
   background-repeat:no-repeat;
 }
-html.ie6 #header-logo{
-  background-image:url(../img/logo-verde-IE.gif);
-}
 nav{
   float:left;
   left:34px;
@@ -114,9 +108,6 @@ html.notie nav a.vegas:after {
   left:50%;
   margin-left:-61px;
   top:-123px;
-}
-html.ie6 .ficha{
-  background-image:url(../img/ficha-verde-IE.gif);
 }
 .animacao-out{
   -webkit-transition: all 0.5s ease-out;
@@ -200,6 +191,9 @@ html.lte8 .card .content{
   opacity:0.0;
   -moz-transform:rotate(-5deg);
   -webkit-transform:rotate(-5deg);
+  -o-transform:rotate(-5deg);
+  -ms-transform:rotate(-5deg);
+  transform:rotate(-5deg);
 }
 #carta-0{
   left:372px;
@@ -207,14 +201,17 @@ html.lte8 .card .content{
   opacity:0.0;
   -moz-transform:rotate(5deg);
   -webkit-transform:rotate(5deg);
+  -o-transform:rotate(5deg);
+  -ms-transform:rotate(5deg);
+  transform:rotate(5deg);
 }
 #carta-2{
   left:258px;
   top:52px;
   opacity:0.0;
 }
-#carta-2.card.animacao{
-  opacity:1.0;
+#carta-2.loaded{
+  opacity:1;
 }
 #carta-1.final{
   left:140px;
@@ -222,6 +219,9 @@ html.lte8 .card .content{
   opacity:1;
   -moz-transform:rotate(-11deg);
   -webkit-transform:rotate(-11deg);
+  -o-transform:rotate(-11deg);
+  -ms-transform:rotate(-11deg);
+  transform:rotate(-11deg);
 }
 #carta-0.final{
   left:382px;
@@ -229,6 +229,9 @@ html.lte8 .card .content{
   opacity:1;
   -moz-transform:rotate(11deg);
   -webkit-transform:rotate(11deg);
+  -o-transform:rotate(11deg);
+  -ms-transform:rotate(11deg);
+  transform:rotate(11deg);
 }
 #carta-2.final{
   top:32px;
@@ -237,14 +240,17 @@ html.lte8 .card .content{
 html.no-csstransforms #carta-0,
 html.no-csstransforms #carta-0.final{
   top:35px;
+  opacity:1;
 }
 html.no-csstransforms #carta-1,
 html.no-csstransforms #carta-1.final{
   top:35px;
+  opacity:1;
 }
 html.no-csstransforms #carta-2,
 html.no-csstransforms #carta-2.final{
   top:25px !important;
+  opacity:1;
 }
 
 
@@ -276,50 +282,29 @@ footer li a{
   background-image:url(../img/patrocinadores/patrocinadores_01.png);
   width:51px;
 }
-html.ie6 #patrocinio-1{
-  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_01.gif);
-}
 #patrocinio-2{
   background-image:url(../img/patrocinadores/patrocinadores_02.png);
   width:115px;
-}
-html.ie6 #patrocinio-2{
-  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_02.gif);
 }
 #patrocinio-3{
   background-image:url(../img/patrocinadores/patrocinadores_03.png);
   width:62px;
 }
-html.ie6 #patrocinio-3{
-  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_03.gif);
-}
 #patrocinio-4{
   background-image:url(../img/patrocinadores/patrocinadores_04.png);
   width:88px;
-}
-html.ie6 #patrocinio-4{
-  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_04.gif);
 }
 #patrocinio-5{
   background-image:url(../img/patrocinadores/patrocinadores_05.png);
   width:77px;
 }
-html.ie6 #patrocinio-5{
-  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_05.gif);
-}
 #patrocinio-6{
   background-image:url(../img/patrocinadores/patrocinadores_06.png);
   width:108px;
 }
-html.ie6 #patrocinio-6{
-  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_06.gif);
-}
 #patrocinio-7{
   background-image:url(../img/patrocinadores/patrocinadores_07.png);
   width:46px;
-}
-html.ie6 #patrocinio-7{
-  background-image:url(../img/patrocinadores/patrocinadores-verde-IE_07.gif);
 }
 /*Sombra na mesa (divs inseridos via javascript variavel sombra_bg)*/
 #sombra-top, 

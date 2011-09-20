@@ -1,5 +1,10 @@
 # Todo
 
+Link para PNG fixes no IE
+
+  * http://www.twinhelix.com/css/iepngfix/demo/
+  * http://jquery.andreaseberhard.de/pngFix/
+  
 Link para CSS fonts no IE
 
  * http://www.fontsquirrel.com/fontface/generator

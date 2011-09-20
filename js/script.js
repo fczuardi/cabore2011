@@ -6,9 +6,11 @@ var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>'
 var html_element,
     body_element,
     fichas_elements,
+    cartas_elements,
     is_iPhone,
     is_iPad,
-    is_webApp;
+    is_webApp,
+    cartaCount;
 
 function addBrowserClasses(){
   if ($.browser.msie){
@@ -19,7 +21,7 @@ function addBrowserClasses(){
 }
 function tweakContentForIE(){
   if ($.browser.msie){
-    $('nav a.vegas').html(estrela_ie+' '+$('nav a.vegas').html()+' '+estrela_ie); 
+    $('nav a.vegas').html(estrela_ie+' '+$('nav a.vegas').html()+' '+estrela_ie);
   }
 }
 function addShadow(){
@@ -51,12 +53,14 @@ function desceFichas(targetX){
 }
 
 function entraCartas(){
-  console.log('foo');
+  $('#carta-2').addClass('loaded');
+  cartaCount = 0;
   for(var i=0; i<3; i++){
-    setTimeout(function(carta){
-      $('#carta-'+carta).addClass('animacao-out');
-      $('#carta-'+carta).addClass('final');
-    },i*150, 2-i);
+    setTimeout(function(){
+      $('#carta-'+cartaCount).addClass('animacao-out');
+      $('#carta-'+cartaCount).addClass('final');
+      cartaCount++;
+    },i*150);
   }
 }
 
@@ -75,6 +79,9 @@ function updateDimensions(){
 function loaded(){
   body_element.addClass('loaded');
   entraCartas();
+  if (html_element.hasClass('ie6')){
+    DD_belatedPNG.fix('#stage, #header-logo, .ficha, .card.basica, .card.back, #patrocinio-1, #patrocinio-2, #patrocinio-3, #patrocinio-4, #patrocinio-5, #patrocinio-6, #patrocinio-7');
+  }
 }
 function changeViewport(){
   var metas = document.getElementsByTagName('meta');
@@ -93,6 +100,7 @@ function init(){
   html_element = $('html');
   body_element = $('body');
   fichas_elements = [$('#ficha-0'),$('#ficha-1'),$('#ficha-2')];
+  cartas_elements = [$('#carta-0'),$('#carta-1'),$('#carta-2')];
   is_iPhone = (navigator.userAgent.match(/iPhone/i) !== null);
   is_iPad = (navigator.userAgent.match(/iPad/i) !== null);
   is_webApp = (window.navigator.standalone === true);
