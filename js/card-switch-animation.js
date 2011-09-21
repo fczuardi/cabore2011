@@ -3,20 +3,33 @@ card_css_top_values_for_slot = [154, 102, 50]; //valores para o top em cada um d
 
 function init(){	
 	//aplica onClick nas cartas
-	$('#carta-0 a').click(function(){
+	$('#carta-0 a').click(function(event){
+    event.preventDefault();  
 		changeCardOrder(0);
 	});
-	$('#carta-1 a').click(function(){
+	$('#carta-1 a').click(function(event){
+    event.preventDefault();  
 		changeCardOrder(1);
 	});
-	$('#carta-2 a').click(function(){
+	$('#carta-2 a').click(function(event){
+    event.preventDefault();  
 		changeCardOrder(2);
 	});
+}
+
+function picTouchStart(event){
+  event.preventDefault();
+  var index = $(event.target).data('index');
+	changeCardOrder(index);
 }
 
 function changeCardOrder(id){
 	//descobre o index do card em questão no array de ordem das cartas
 	var index = $.inArray(id, card_visual_order);
+
+  //ignora se ja estiver rolando animacao
+  if ($('#carta-'+id).queue('fx').length > 0){return false};
+  
 
 	if(card_visual_order[index] != card_visual_order[card_visual_order.length - 1]){
 		//altera a ordem do array
