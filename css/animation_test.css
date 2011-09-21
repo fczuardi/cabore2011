@@ -1,0 +1,46 @@
+.card{
+  width:186px;
+  height:254px;
+  position:absolute;
+  background-repeat:no-repeat;
+  overflow: hidden;
+	left:100px;
+}
+.card a{
+  display: block;
+  width: 176px;
+  height: 265px;
+  margin-left: -32px;
+  margin-top: -46px;
+  outline: none;
+}
+.card.back{
+  background-image:url(../img/carta-verso.png);
+}
+.card.basica{
+  background-image:url(../img/carta-basica.png);
+}
+.card .content{
+  width:112px;
+  height:240px;
+  position:relative;
+  top:27px;
+  left:38px;
+  background-repeat:no-repeat;
+  background-position:0px 45px;
+}
+.card .content.test{
+  background-image:url(../img/carta-ref-candidato-com-foto.png);
+}
+#carta-0{
+ 	top: 154px;
+	border: 3px solid rgba(255,0,0,.2);
+}
+#carta-1{
+	top: 102px;
+	border: 3px solid rgba(0,255,0,.2);
+}
+#carta-2{
+	top: 50px;
+	border: 3px solid rgba(0,0,255,.2);
+}
