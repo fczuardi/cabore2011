@@ -132,6 +132,8 @@ function menuitemClicked(event){
       , item_nome = link.attr('href').substring(1)
       , item = $('#link-'+item_nome);
   event.preventDefault();
+  console.log('menuitemClicked');
+  console.log(navigation_elements);
   if (item.hasClass('selected')){ return false; }
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
@@ -154,7 +156,7 @@ function addListeners(){
     }
   }
   navigation_elements.bind('click',menuitemClicked);
-  $('#carta-2 a').bind('click',menuitemClicked);
+  $('.home #carta-2 a').bind('click',menuitemClicked);
 }
 function animaCartaModerno(){
   var carta = $('#carta-'+cartaCount);

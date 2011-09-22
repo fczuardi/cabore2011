@@ -37,21 +37,28 @@ body a:visited {
 	color: #fff;
 }
 /************** TEXTO ********************/
-h2 {
-    font-family: "FlamaSemicondensedBasic";
-    color: #fff;
-    text-decoration: none;
+h2,h3 {
     font-weight: normal;
-    font-style: normal;
+    color: #fff;
+    margin:0;
+}
+h2 {
+  font-family: "FlamaSemicondensedBasic";
     text-align: center;
     text-transform: uppercase;
     font-size: 15px;
     margin-top: -30px;
 }
-p.colunaDeTexto {
-  color: #fff;
+h3{
+  font-family: "FlamaSemicondensedSemibold";
+  margin-bottom:1em;
+}
+.colunaDeTexto{
   padding: 48px;
-  padding-left: 245px;
+  padding-left: 253px;
+  color: #fff;
+}
+.colunaDeTexto p {
   font-size: 15px;
   line-height: 21px;
   margin: 0px;
@@ -288,7 +295,7 @@ html.lte8 .card .content{
     text-align: center;
     height:55px;
 }
-#carta-1{
+body.home #carta-1{
   left:150px;
   top:52px;
   opacity:0.0;
@@ -298,7 +305,7 @@ html.lte8 .card .content{
   -ms-transform:rotate(-5deg);
   transform:rotate(-5deg);
 }
-#carta-0{
+body.home #carta-0{
   left:372px;
   top:52px;
   opacity:0.0;
@@ -308,15 +315,15 @@ html.lte8 .card .content{
   -ms-transform:rotate(5deg);
   transform:rotate(5deg);
 }
-#carta-2{
+body.home #carta-2{
   left:258px;
   top:52px;
   opacity:0.0;
 }
-#carta-2.loaded{
+body.home #carta-2.loaded{
   opacity:1;
 }
-#carta-1.final{
+body.home #carta-1.final{
   left:140px;
   top:32px;
   opacity:1;
@@ -326,7 +333,7 @@ html.lte8 .card .content{
   -ms-transform:rotate(-11deg);
   transform:rotate(-11deg);
 }
-#carta-0.final{
+body.home #carta-0.final{
   left:382px;
   top:32px;
   opacity:1;
@@ -336,25 +343,36 @@ html.lte8 .card .content{
   -ms-transform:rotate(11deg);
   transform:rotate(11deg);
 }
-#carta-2.final{
+body.home #carta-2.final{
   top:32px;
   opacity:1;
 }
-html.no-csstransforms #carta-0,
-html.no-csstransforms #carta-0.final{
+html.no-csstransforms body.home #carta-0,
+html.no-csstransforms body.home #carta-0.final{
   top:35px;
   opacity:1;
 }
-html.no-csstransforms #carta-1,
-html.no-csstransforms #carta-1.final{
+html.no-csstransforms body.home #carta-1,
+html.no-csstransforms body.home #carta-1.final{
   top:35px;
   opacity:1;
 }
-html.no-csstransforms #carta-2,
-html.no-csstransforms #carta-2.final{
+html.no-csstransforms body.home #carta-2,
+html.no-csstransforms body.home #carta-2.final{
   top:25px !important;
   opacity:1;
 }
+
+body.indicados.detail #carta-0{
+ 	top: 154px;
+}
+body.indicados.detail #carta-1{
+	top: 102px;
+}
+body.indicados.detail #carta-2{
+	top: 50px;
+}
+
 
 /* ---- CANDIDATOS ---- */
 .card .JairoLeal {
@@ -400,6 +418,16 @@ ul.coluna1{
 }
 ul.coluna2 li{
   height: 34px;
+}
+
+/** INDICADOS DETALHES **/
+body.indicados.detail #main{
+  min-height:410px;
+}
+body.indicados.detail #sidebar{
+  position: relative;
+  top:-20px;
+  left:-70px;
 }
 
 /************ FOOTER *************/
