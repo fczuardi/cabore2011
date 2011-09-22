@@ -1,0 +1,61 @@
+::-moz-selection,
+::selection{
+	background-color: rgba(0,0,0,.2);
+}
+
+@font-face {
+    font-family: 'FlamaSemicondensedSemibold';
+    src: url('../fonts/flamasemicondensed-semibold.eot');
+    src: url('../fonts/flamasemicondensed-semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/flamasemicondensed-semibold.woff') format('woff'),
+         url('../fonts/flamasemicondensed-semibold.ttf') format('truetype'),
+         url('../fonts/flamasemicondensed-semibold.svg#FlamaSemicondensedSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body a {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+body a:visited {
+	color: #fff;
+}
+
+ul.indicados a:hover{
+	font-family: "FlamaSemicondensedSemibold";
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+ul.indicados {
+	list-style: none;
+	margin:0px;
+	padding:40px;
+	padding-top:42px;
+}
+
+ul.indicados li{
+	height: 38px;
+}
+
+ul.indicados li.last{
+	height: 15px;
+}
+
+ul.indicados li.duasLinhas{
+	height: 52px;
+}
+
+ul.coluna1{
+	float: left;
+	width: 240px;
+	padding-left: 125px;
+}
+
+ul.coluna2 li{
+	height: 34px;
+}
