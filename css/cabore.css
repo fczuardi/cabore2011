@@ -10,11 +10,11 @@
 }
 @font-face {
     font-family: 'FlamaSemicondensedSemibold';
-    src: url('../fonts/flamasemicondensed-semibold.eot');
-    src: url('../fonts/flamasemicondensed-semibold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/flamasemicondensed-semibold.woff') format('woff'),
-         url('../fonts/flamasemicondensed-semibold.ttf') format('truetype'),
-         url('../fonts/flamasemicondensed-semibold.svg#FlamaSemicondensedSemibold') format('svg');
+    src: url('../fonts/flamasemicondensed-semibold-webfont.eot');
+    src: url('../fonts/flamasemicondensed-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/flamasemicondensed-semibold-webfont.woff') format('woff'),
+         url('../fonts/flamasemicondensed-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/flamasemicondensed-semibold-webfont.svg#FlamaSemicondensedSemibold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -37,6 +37,17 @@ body a:visited {
 	color: #fff;
 }
 /************** TEXTO ********************/
+h2 {
+    font-family: "FlamaSemicondensedBasic";
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-top: -30px;
+}
 p.colunaDeTexto {
   color: #fff;
   padding: 48px;
@@ -252,11 +263,30 @@ html.lte8 .card .content{
   top: 31px;
   left: 30px;
 }
+.card.centro {
+    top: 31px;
+    left: 261px;
+}
+.card.direita {
+    top: 31px;
+    right: 30px;
+}
 .card .content.home{
   background-image:url(../img/carta-img-home.png);
 }
 .card .cabore {
   background-image:url(../img/carta-img-trofeu.png);
+}
+.card.candidatos.comFoto a{
+    font-family: "FlamaSemicondensedSemibold";
+    color: #784a00 !important; /*IE6*/
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-style: normal;
+    padding-top: 219px;
+    text-align: center;
+    height:55px;
 }
 #carta-1{
   left:150px;
@@ -324,6 +354,19 @@ html.no-csstransforms #carta-2,
 html.no-csstransforms #carta-2.final{
   top:25px !important;
   opacity:1;
+}
+
+/* ---- CANDIDATOS ---- */
+.card .JairoLeal {
+  background-image:url(../photos/jairo-leal.jpg);
+}
+
+.card .LuizLara {
+  background-image:url(../photos/luis-lara.jpg);
+}
+
+.card .NizanGuanaes {
+  background-image:url(../photos/nizan-guanaes.jpg);
 }
 
 
