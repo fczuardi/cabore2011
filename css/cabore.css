@@ -36,7 +36,22 @@ body a {
 body a:visited {
 	color: #fff;
 }
-
+/************** TEXTO ********************/
+p.colunaDeTexto {
+  color: #fff;
+  padding: 48px;
+  padding-left: 245px;
+  font-size: 15px;
+  line-height: 21px;
+  margin: 0px;
+}
+p.colunaDeTexto strong {
+  font-family: "FlamaSemicondensedSemibold";
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
 /************** LAYOUT ********************/
 #stage{
   overflow:hidden;
@@ -233,8 +248,15 @@ easeInOutCirc:  '0.785, 0.135, 0.150, 0.860'
 html.lte8 .card .content{
   background-position:0px 0px;
 }
+.card.esquerda {
+  top: 31px;
+  left: 30px;
+}
 .card .content.home{
   background-image:url(../img/carta-img-home.png);
+}
+.card .cabore {
+  background-image:url(../img/carta-img-trofeu.png);
 }
 #carta-1{
   left:150px;
