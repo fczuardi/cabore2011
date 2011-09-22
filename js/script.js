@@ -222,6 +222,7 @@ function loaded(){
     entraCartas();
   } else {
     desceFichas(page_name);
+    $('#link-'+page_name).addClass('selected');
   }
 }
 function changeViewport(){
