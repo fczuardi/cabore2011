@@ -79,7 +79,7 @@ function desceFichasFallback(targetX){
 }
 function desceFichas(name_or_targetX){
   var menuitem, item_width, item_left, targetX;
-  if (typeof name_or_targetX === 'undefined'){return false;}
+  if (!name_or_targetX){return false;}
   if (typeof name_or_targetX == 'string'){
     menuitem = $('#link-'+name_or_targetX);
     item_width = menuitem.width();
