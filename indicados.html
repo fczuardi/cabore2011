@@ -27,7 +27,6 @@
   <!-- CSS concatenated and minified via ant build script-->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/cabore.css">
-	<link rel="stylesheet" href="css/indicados.css">
   <!-- end CSS-->
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
@@ -38,26 +37,26 @@
   <script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
-<body id="corpo" onorientationchange="updateDimensions();">
+<body data-page-name="indicados" id="corpo" onorientationchange="updateDimensions();">
 <div id="stage">
   <div id="container">
     <header>
       <div id="header-logo"></div>
       <nav>
         <ul>
-          <li><a id="debug" href="#" onclick="desceFichas(100);return false;">Caboré</a></li>
-          <li><a id="debug2" href="#" onclick="sobeFichas();return false;">Indicados</a></li>
-          <li><a href="#">Votação</a></li>
-          <li><a href="#" class="vegas">Go to Vegas</a></li>
-          <li><a href="#">Premiação</a></li>
-          <li><a href="#">Festa</a></li>
+          <li><a id="link-cabore" href="#cabore">Caboré</a></li>
+          <li><a id="link-indicados" href="#indicados">Indicados</a></li>
+          <li><a id="link-votacao" href="#votacao">Votação</a></li>
+          <li><a id="link-promocao" href="#promocao" class="vegas">Go to Vegas</a></li>
+          <li><a id="link-premiacao" href="#premiacao">Premiação</a></li>
+          <li><a id="link-festa" href="#festa">Festa</a></li>
         </ul>
       </nav>
       <div id="ficha-0" class="ficha"></div>
       <div id="ficha-1" class="ficha"></div>
       <div id="ficha-2" class="ficha"></div>
     </header>
-    <div id="main" role="main">
+    <div id="main">
       <ul class="indicados coluna1">
         <li class="duasLinhas"><a href="#">empresário ou dirigente<br/>da indústria da comunicação</a></li>
         <li><a href="#">agência de propaganda</a></li>
@@ -75,6 +74,7 @@
         <li><a href="#">serviço especializado</a></li>
         <li class="last"><a href="#">produção publicitária</a></li>
       </ul>
+
     </div>
     <footer>
       <ul>

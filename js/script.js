@@ -12,7 +12,7 @@ var html_element,
     is_iPad,
     is_webApp,
     cartaCount,
-    posicao_descida = null;
+    item_descida = null;
 
 function addBrowserClasses(){
   if ($.browser.msie){
@@ -32,53 +32,6 @@ function addShadow(){
     $('#stage').prepend(sombra_bg); 
   }
 }
-function fichaTransitioned(event){
-  //ficha terminou de subir
-  if ($(this).hasClass('animacao-in')){
-    $(this).removeClass('animacao-in');
-    $(this).removeClass('animacao');
-    if ((!fichas_elements.hasClass('animacao')) && (posicao_descida !== null)){
-      console.log(posicao_descida);
-      desceFichas(posicao_descida);
-    }
-  }
-}
-function menuitemClicked(event){
-  var   link = $(this)
-      , item_nome = link.attr('href').substring(1)
-      , item = $('#link-'+item_nome)
-      , item_width = item.width()
-      , item_left = item.position().left
-      , targetX = item_left+item_width/2+203-60;
-  event.preventDefault();
-  if (item.hasClass('selected')){
-  }else {
-    if(navigation_elements.hasClass('selected')){
-      //some other link was selected
-      navigation_elements.removeClass('selected');
-      posicao_descida = targetX;
-      sobeFichas();
-    } else {
-      desceFichas(targetX);
-      posicao_descida == null;
-    }
-    item.addClass('selected');
-  }
-}
-function addListeners(){
-  for (var i=0; i<fichas_elements.length; i++){
-    if (fichas_elements[i].addEventListener){  
-      fichas_elements[i].addEventListener("transitionend", fichaTransitioned, true);
-      fichas_elements[i].addEventListener("oTransitionEnd", fichaTransitioned, true);
-      fichas_elements[i].addEventListener("webkitTransitionEnd", fichaTransitioned, true);      
-    } else if (fichas_elements[i].attachEvent){  
-      fichas_elements[i].attachEvent("transitionend", fichaTransitioned);
-    }
-  }
-  navigation_elements.bind('click',menuitemClicked);
-  $('#carta-2 a').bind('click',menuitemClicked);
-}
-
 function desceFichasModerno(targetX){
   //o set timeout aqui é para dar um tempo para a mudanca de css ('left') tomar efeito
   setTimeout(function(){
@@ -124,7 +77,16 @@ function desceFichasFallback(targetX){
     }
   }
 }
-function desceFichas(targetX){
+function desceFichas(name_or_targetX){
+  var menuitem, item_width, item_left, targetX;
+  if (typeof name_or_targetX == 'string'){
+    menuitem = $('#link-'+name_or_targetX);
+    item_width = menuitem.width();
+    item_left = menuitem.position().left;
+    targetX = item_left+item_width/2+203-60;
+  } else{
+    targetX = name_or_targetX;
+  }
   for (var i=0; i<fichas_elements.length; i++){
     $(fichas_elements[i]).css('left', targetX);
   }
@@ -153,6 +115,45 @@ function sobeFichas(){
       });
     }  
   }
+}
+function fichaTransitioned(event){
+  //ficha terminou de subir
+  if ($(this).hasClass('animacao-in')){
+    $(this).removeClass('animacao-in');
+    $(this).removeClass('animacao');
+    if ((!fichas_elements.hasClass('animacao')) && (item_descida !== null)){
+      desceFichas(item_descida);
+    }
+  }
+}
+function menuitemClicked(event){
+  var   link = $(this)
+      , item_nome = link.attr('href').substring(1)
+      , item = $('#link-'+item_nome);
+  event.preventDefault();
+  if (item.hasClass('selected')){ return false; }
+  if(navigation_elements.hasClass('selected')){
+    //some other link was selected
+    navigation_elements.removeClass('selected');
+    item_descida = item_nome;
+    sobeFichas();
+  } else {
+    desceFichas(item_nome);
+  }
+  item.addClass('selected');
+}
+function addListeners(){
+  for (var i=0; i<fichas_elements.length; i++){
+    if (fichas_elements[i].addEventListener){  
+      fichas_elements[i].addEventListener("transitionend", fichaTransitioned, true);
+      fichas_elements[i].addEventListener("oTransitionEnd", fichaTransitioned, true);
+      fichas_elements[i].addEventListener("webkitTransitionEnd", fichaTransitioned, true);      
+    } else if (fichas_elements[i].attachEvent){  
+      fichas_elements[i].attachEvent("transitionend", fichaTransitioned);
+    }
+  }
+  navigation_elements.bind('click',menuitemClicked);
+  $('#carta-2 a').bind('click',menuitemClicked);
 }
 function animaCartaModerno(){
   var carta = $('#carta-'+cartaCount);
@@ -211,11 +212,16 @@ function updateDimensions(){
   $('#stage').css('height',new_stage_height);
 }
 function loaded(){
+  var page_name = body_element.data('page-name');
   body_element.addClass('loaded');
   if (html_element.hasClass('ie6')){
     DD_belatedPNG.fix('#stage, #header-logo, .ficha, .card.basica, .card.back, #patrocinio-1, #patrocinio-2, #patrocinio-3, #patrocinio-4, #patrocinio-5, #patrocinio-6, #patrocinio-7');
   }
-  entraCartas();
+  if (page_name == 'home'){
+    entraCartas();
+  } else {
+    desceFichas(page_name);
+  }
 }
 function changeViewport(){
   var metas = document.getElementsByTagName('meta');
