@@ -42,11 +42,9 @@ function addTransitionEvents(){
     fichas_elements[i][0].addEventListener("transitionend", fichaTransitioned, true);
   }
 }
-function desceFichas(targetX){
-  for (var i=0; i<fichas_elements.length; i++){
-    fichas_elements[i].css('left', targetX);
-  }
-  //o set timeout aqui é para dar um tempo para esta mudanca de css acima tomar efeito
+
+function desceFichasModerno(targetX){
+  //o set timeout aqui é para dar um tempo para a mudanca de css ('left') tomar efeito
   setTimeout(function(){
     var ficha,
         targetY = -40;
@@ -55,7 +53,6 @@ function desceFichas(targetX){
       ficha.addClass('animacao');
       ficha.removeClass('animacao-in');
       ficha.addClass('animacao-out');
-      ficha.css('top', targetY - (Math.random()*40));
       if (i > 0){
         ficha.css('top', targetY - (Math.random()*40));
         ficha.css('left', targetX +(Math.random()*62 - 31));
@@ -65,14 +62,59 @@ function desceFichas(targetX){
     }
   },200, targetX);
 }
+function desceFichasFallback(targetX){
+  var   ficha
+      , targetY = -40
+      , transition
+      , durations = [700, 300, 500]; //from cabore.css
+  for (var i=0; i<fichas_elements.length; i++){
+    ficha = fichas_elements[i];
+    ficha.addClass('animacao');
+    ficha.delay(200);
+    transition = {
+      queue:false, 
+      duration:durations[i],
+      easing:'easeOutQuart'
+    }
+    if (i > 0){
+      ficha.animate({
+          'top': targetY - (Math.random()*40)
+        , 'left': targetX + (Math.random()*62 - 31)
+      }, transition);
+    } else {
+      ficha.animate({
+        'top': targetY
+      }, transition);
+    }
+  }
+}
+function desceFichas(targetX){
+  for (var i=0; i<fichas_elements.length; i++){
+    fichas_elements[i].css('left', targetX);
+  }
+  if (Modernizr.csstransitions){
+    desceFichasModerno(targetX);
+  } else {
+    desceFichasFallback(targetX);
+  }  
+}
 function sobeFichas(){
-  var ficha;
+  var   ficha
+      , durations = [700, 300, 500]; //from cabore.css
   if (!fichas_elements[0].hasClass('animacao')){return false;}
   for (var i=0; i<fichas_elements.length; i++){
     ficha = fichas_elements[i];
-    ficha.removeClass('animacao-out');
-    ficha.addClass('animacao-in');
-    ficha.css('top', ficha.position().top - 130);
+    if (Modernizr.csstransitions){
+      ficha.removeClass('animacao-out');
+      ficha.addClass('animacao-in');
+      ficha.css('top', ficha.position().top - 130);
+    } else {
+      ficha.animate({'top': ficha.position().top - 130},{
+        queue:false, 
+        duration:durations[i],
+        easing:'easeInQuart'
+      });
+    }  
   }
 }
 function animaCartaModerno(){
