@@ -7,10 +7,12 @@ var html_element,
     body_element,
     fichas_elements,
     cartas_elements,
+    navigation_elements,
     is_iPhone,
     is_iPad,
     is_webApp,
-    cartaCount;
+    cartaCount,
+    posicao_descida = null;
 
 function addBrowserClasses(){
   if ($.browser.msie){
@@ -35,21 +37,55 @@ function fichaTransitioned(event){
   if ($(this).hasClass('animacao-in')){
     $(this).removeClass('animacao-in');
     $(this).removeClass('animacao');
+    if ((!fichas_elements.hasClass('animacao')) && (posicao_descida !== null)){
+      console.log(posicao_descida);
+      desceFichas(posicao_descida);
+    }
   }
 }
-function addTransitionEvents(){
-  for (var i=0; i<fichas_elements.length; i++){
-    fichas_elements[i][0].addEventListener("transitionend", fichaTransitioned, true);
+function menuitemClicked(event){
+  var   item = $(this)
+      , item_width = item.width()
+      , item_left = item.position().left
+      , targetX = item_left+item_width/2+203-60;
+  event.preventDefault();
+  if (item.hasClass('selected')){
+  }else {
+    if(navigation_elements.hasClass('selected')){
+      console.log('troca de link');
+      //some other link was selected
+      navigation_elements.removeClass('selected');
+      posicao_descida = targetX;
+      sobeFichas();
+    } else {
+      console.log(navigation_elements);
+      console.log('primeira entrada');
+      desceFichas(targetX);
+      posicao_descida == null;
+    }
+    item.addClass('selected');
   }
+}
+function addListeners(){
+  for (var i=0; i<fichas_elements.length; i++){
+    if (fichas_elements[i].addEventListener){  
+      fichas_elements[i].addEventListener("transitionend", fichaTransitioned, true);
+      fichas_elements[i].addEventListener("oTransitionEnd", fichaTransitioned, true);
+      fichas_elements[i].addEventListener("webkitTransitionEnd", fichaTransitioned, true);      
+    } else if (fichas_elements[i].attachEvent){  
+      fichas_elements[i].attachEvent("transitionend", fichaTransitioned);
+    }
+  }
+  navigation_elements.bind('click',menuitemClicked);
 }
 
 function desceFichasModerno(targetX){
   //o set timeout aqui é para dar um tempo para a mudanca de css ('left') tomar efeito
   setTimeout(function(){
     var ficha,
-        targetY = -40;
+        targetY = -36;
     for (var i=0; i<fichas_elements.length; i++){
-      ficha = fichas_elements[i];
+      ficha = $(fichas_elements[i]);
       ficha.addClass('animacao');
       ficha.removeClass('animacao-in');
       ficha.addClass('animacao-out');
@@ -68,13 +104,13 @@ function desceFichasFallback(targetX){
       , transition
       , durations = [700, 300, 500]; //from cabore.css
   for (var i=0; i<fichas_elements.length; i++){
-    ficha = fichas_elements[i];
+    ficha = $(fichas_elements[i]);
     ficha.addClass('animacao');
     ficha.delay(200);
     transition = {
       queue:false, 
       duration:durations[i],
-      easing:'easeOutQuart'
+      easing:'easeOutCirc'
     }
     if (i > 0){
       ficha.animate({
@@ -90,7 +126,7 @@ function desceFichasFallback(targetX){
 }
 function desceFichas(targetX){
   for (var i=0; i<fichas_elements.length; i++){
-    fichas_elements[i].css('left', targetX);
+    $(fichas_elements[i]).css('left', targetX);
   }
   if (Modernizr.csstransitions){
     desceFichasModerno(targetX);
@@ -101,17 +137,18 @@ function desceFichas(targetX){
 function sobeFichas(){
   var   ficha
       , durations = [700, 300, 500]; //from cabore.css
-  if (!fichas_elements[0].hasClass('animacao')){return false;}
+  if (!$(fichas_elements[0]).hasClass('animacao')){return false;}
   for (var i=0; i<fichas_elements.length; i++){
-    ficha = fichas_elements[i];
+    ficha = $(fichas_elements[i]);
+    ficha.removeClass('animacao-out');
+    ficha.addClass('animacao-in');
     if (Modernizr.csstransitions){
-      ficha.removeClass('animacao-out');
-      ficha.addClass('animacao-in');
       ficha.css('top', ficha.position().top - 130);
     } else {
       ficha.animate({'top': ficha.position().top - 130},{
         queue:false, 
         duration:durations[i],
+        complete:fichaTransitioned,
         easing:'easeInQuart'
       });
     }  
@@ -126,24 +163,25 @@ function animaCartaFallback(){
   var attributes = [{
           'left':382
         , 'top':32
-        , 'opacity':1
-        , 'transform':'rotate(11deg)'
       },
       {
           'left':140
         , 'top':32
-        , 'opacity':1
-        , 'transform':'rotate(-11deg)'
       },
       {
          'top':32
-        , 'opacity':1
       }]
       , transition = {
           queue:false, 
           duration:500,
           easing:'easeOutCirc'
       };
+  if (!html_element.hasClass('oldie')){
+    attributes[0].opacity = 1;
+    attributes[1].opacity = 1;
+    attributes[0].transform = 'rotate(11deg)';
+    attributes[1].transform = 'rotate(-11deg)';
+  }
   $('#carta-'+cartaCount).animate(attributes[cartaCount], transition);
 }
 function entraCartas(){
@@ -196,11 +234,13 @@ function init(){
   html_element = $('html');
   body_element = $('body');
   fichas_elements = [$('#ficha-0'),$('#ficha-1'),$('#ficha-2')];
+  fichas_elements = $('.ficha');
   cartas_elements = [$('#carta-0'),$('#carta-1'),$('#carta-2')];
+  navigation_elements = $('header nav a');
   is_iPhone = (navigator.userAgent.match(/iPhone/i) !== null);
   is_iPad = (navigator.userAgent.match(/iPad/i) !== null);
   is_webApp = (window.navigator.standalone === true);
-  addTransitionEvents();
+  addListeners();
   addBrowserClasses();
   changeViewport();
   tweakContentForIE();
