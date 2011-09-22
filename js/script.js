@@ -44,7 +44,9 @@ function fichaTransitioned(event){
   }
 }
 function menuitemClicked(event){
-  var   item = $(this)
+  var   link = $(this)
+      , item_nome = link.attr('href').substring(1)
+      , item = $('#link-'+item_nome)
       , item_width = item.width()
       , item_left = item.position().left
       , targetX = item_left+item_width/2+203-60;
@@ -52,14 +54,11 @@ function menuitemClicked(event){
   if (item.hasClass('selected')){
   }else {
     if(navigation_elements.hasClass('selected')){
-      console.log('troca de link');
       //some other link was selected
       navigation_elements.removeClass('selected');
       posicao_descida = targetX;
       sobeFichas();
     } else {
-      console.log(navigation_elements);
-      console.log('primeira entrada');
       desceFichas(targetX);
       posicao_descida == null;
     }
@@ -77,6 +76,7 @@ function addListeners(){
     }
   }
   navigation_elements.bind('click',menuitemClicked);
+  $('#carta-2 a').bind('click',menuitemClicked);
 }
 
 function desceFichasModerno(targetX){
