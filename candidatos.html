@@ -12,7 +12,7 @@
        More info: h5bp.com/b/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Caboré 2011 - Sobre o Prêmio</title>
+  <title>Caboré 2011 - Nome da Categoria</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -27,6 +27,7 @@
   <!-- CSS concatenated and minified via ant build script-->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/cabore.css">
+  <link rel="stylesheet" href="css/cabore-section.css">
   <!-- end CSS-->
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
@@ -37,30 +38,36 @@
   <script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
-<body data-page-name="cabore" id="corpo" onorientationchange="updateDimensions();">
+<body id="corpo" onorientationchange="updateDimensions();">
 <div id="stage">
   <div id="container">
     <header>
       <div id="header-logo"></div>
       <nav>
         <ul>
-          <li><a id="link-cabore" href="#cabore">Caboré</a></li>
-          <li><a id="link-indicados" href="#indicados">Indicados</a></li>
-          <li><a id="link-votacao" href="#votacao">Votação</a></li>
-          <li><a id="link-promocao" href="#promocao" class="vegas">Go to Vegas</a></li>
-          <li><a id="link-premiacao" href="#premiacao">Premiação</a></li>
-          <li><a id="link-festa" href="#festa">Festa</a></li>
+          <li><a id="debug" href="#" onclick="desceFichas(100);return false;">Caboré</a></li>
+          <li><a id="debug2" href="#" onclick="sobeFichas();return false;">Indicados</a></li>
+          <li><a href="#">Votação</a></li>
+          <li><a href="#" class="vegas">Go to Vegas</a></li>
+          <li><a href="#">Premiação</a></li>
+          <li><a href="#">Festa</a></li>
         </ul>
       </nav>
       <div id="ficha-0" class="ficha"></div>
       <div id="ficha-1" class="ficha"></div>
       <div id="ficha-2" class="ficha"></div>
     </header>
-    <div id="main">
-      <div class="card basica esquerda">
-        <div class="content cabore"><a href="#cabore">Prêmio</a></div>
+    <div id="main" role="main">
+			<h2>Empresário ou Dirigente da Indústria da Comunicação</h2>
+      <div class="card basica candidatos comFoto esquerda">
+        <div class="content JairoLeal"><a href="#JairoLeal">Jairo Leal</a></div>
       </div>
-      <p class="colunaDeTexto">Considerado o “Oscar” da publicidade brasileira, o <strong>Prêmio Caboré</strong> consagra os principais profissionais e empresas que contribuem para o desenvolvimento da indústria da comunicação no Brasil. Instituído pelo <strong>Meio & Mensagem</strong> em 1980, transformou-se no mais cobiçado prêmio do mercado publicitário brasileiro. Com três indicados em cada uma das 13 categorias, o vencedor é eleito pelos assinantes do jornal e o resultado é auditado pela PricewaterhouseCoopers. A festa de premiação é realizada em <strong>4 de dezembro</strong>, Dia Mundial da Propaganda, no Credicard Hall, e reúne os principais e mais importantes líderes da indústria da comunicação.</p>
+			<div class="card basica candidatos comFoto centro">
+        <div class="content LuizLara"><a href="#LuizLara">Luiz Lara</a></div>
+      </div>
+			<div class="card basica candidatos comFoto direita">
+        <div class="content NizanGuanaes"><a href="#NizanGuanaes">Nizan Guanaes</a></div>
+      </div>
     </div>
     <footer>
       <ul>
