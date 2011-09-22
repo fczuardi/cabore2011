@@ -1,48 +1,7 @@
-.card{
-  width:186px;
-  height:254px;
-  position:absolute;
-  background-repeat:no-repeat;
-  overflow: hidden;
-	left:100px;
+::-moz-selection,
+::selection{
+	background-color: rgba(0,0,0,.2);
 }
-.card a{
-  display: block;
-  width: 176px;
-  height: 265px;
-  margin-left: -32px;
-  margin-top: -46px;
-  outline: none;
-}
-.card.back{
-  background-image:url(../img/carta-verso.png);
-}
-.card.basica{
-  background-image:url(../img/carta-basica.png);
-}
-.card .content{
-  width:112px;
-  height:240px;
-  position:relative;
-  top:27px;
-  left:38px;
-  background-repeat:no-repeat;
-  background-position:0px 45px;
-}
-.card .content.test{
-/*  background-image:url(../img/carta-ref-candidato-com-foto.png);*/
-}
-#carta-0{
- 	top: 154px;
-}
-#carta-1{
-	top: 102px;
-}
-#carta-2{
-	top: 50px;
-}
-
-/* ---- CANDIDATOS ---- */
 
 @font-face {
     font-family: 'FlamaSemicondensedSemibold';
@@ -55,6 +14,47 @@
     font-style: normal;
 }
 
+/* ---- CABORE ---- */
+
+.card .cabore {
+  background-image:url(../img/carta-img-trofeu.png);
+}
+
+.card.esquerda {
+	top: 31px;
+	left: 30px;
+}
+
+p.colunaDeTexto {
+	color: #fff;
+	padding: 48px;
+	padding-left: 245px;
+	font-size: 15px;
+	line-height: 21px;
+	margin: 0px;
+}
+
+p.colunaDeTexto strong {
+	font-family: "FlamaSemicondensedSemibold";
+	color: #fff;
+	text-decoration: none;
+	font-weight: normal;
+  font-style: normal;
+}
+
+/* ---- CANDIDATOS ---- */
+
+
+.card.centro {
+	top: 31px;
+	left: 261px;
+}
+
+.card.direita {
+	top: 31px;
+	right: 30px;
+}
+
 .card.candidatos.comFoto a{
 	font-family: "FlamaSemicondensedSemibold";
 	color: #784a00;
@@ -62,7 +62,6 @@
 	text-transform: uppercase;
 	font-weight: normal;
   font-style: normal;
-	font-size:13px;
 	padding-top: 219px;
 	text-align: center;
 	height:55px;
@@ -81,4 +80,16 @@
 .card .NizanGuanaes {
 /*	background-position: 0px 0px;*/
   background-image:url(../photos/nizan-guanaes.jpg);
+}
+
+h2 {
+	font-family: "FlamaSemicondensedBasic";
+	color: #fff;
+	text-decoration: none;
+	font-weight: normal;
+  font-style: normal;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 15px;
+	margin-top: -30px;
 }
