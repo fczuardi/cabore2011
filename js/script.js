@@ -30,15 +30,30 @@ function addShadow(){
     $('#stage').prepend(sombra_bg); 
   }
 }
+function fichaTransitioned(event){
+  //ficha terminou de subir
+  if ($(this).hasClass('animacao-in')){
+    $(this).removeClass('animacao-in');
+    $(this).removeClass('animacao');
+  }
+}
+function addTransitionEvents(){
+  for (var i=0; i<fichas_elements.length; i++){
+    fichas_elements[i][0].addEventListener("transitionend", fichaTransitioned, true);
+  }
+}
 function desceFichas(targetX){
   for (var i=0; i<fichas_elements.length; i++){
     fichas_elements[i].css('left', targetX);
   }
+  //o set timeout aqui é para dar um tempo para esta mudanca de css acima tomar efeito
   setTimeout(function(){
     var ficha,
         targetY = -40;
     for (var i=0; i<fichas_elements.length; i++){
       ficha = fichas_elements[i];
+      ficha.addClass('animacao');
+      ficha.removeClass('animacao-in');
       ficha.addClass('animacao-out');
       ficha.css('top', targetY - (Math.random()*40));
       if (i > 0){
@@ -49,6 +64,16 @@ function desceFichas(targetX){
       }
     }
   },200, targetX);
+}
+function sobeFichas(){
+  var ficha;
+  if (!fichas_elements[0].hasClass('animacao')){return false;}
+  for (var i=0; i<fichas_elements.length; i++){
+    ficha = fichas_elements[i];
+    ficha.removeClass('animacao-out');
+    ficha.addClass('animacao-in');
+    ficha.css('top', ficha.position().top - 130);
+  }
 }
 function animaCartaModerno(){
   var carta = $('#carta-'+cartaCount);
@@ -133,6 +158,7 @@ function init(){
   is_iPhone = (navigator.userAgent.match(/iPhone/i) !== null);
   is_iPad = (navigator.userAgent.match(/iPad/i) !== null);
   is_webApp = (window.navigator.standalone === true);
+  addTransitionEvents();
   addBrowserClasses();
   changeViewport();
   tweakContentForIE();
