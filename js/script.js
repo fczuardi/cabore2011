@@ -30,7 +30,6 @@ function addShadow(){
     $('#stage').prepend(sombra_bg); 
   }
 }
-
 function desceFichas(targetX){
   for (var i=0; i<fichas_elements.length; i++){
     fichas_elements[i].css('left', targetX);
@@ -51,19 +50,49 @@ function desceFichas(targetX){
     }
   },200, targetX);
 }
-
+function animaCartaModerno(){
+  var carta = $('#carta-'+cartaCount);
+  carta.addClass('animacao-out');
+  carta.addClass('final');
+}
+function animaCartaFallback(){
+  var attributes = [{
+          'left':382
+        , 'top':32
+        , 'opacity':1
+        , 'transform':'rotate(11deg)'
+      },
+      {
+          'left':140
+        , 'top':32
+        , 'opacity':1
+        , 'transform':'rotate(-11deg)'
+      },
+      {
+         'top':32
+        , 'opacity':1
+      }]
+      , transition = {
+          queue:false, 
+          duration:500,
+          easing:'easeOutCirc'
+      };
+  $('#carta-'+cartaCount).animate(attributes[cartaCount], transition);
+}
 function entraCartas(){
-  $('#carta-2').addClass('loaded');
   cartaCount = 0;
+  $('#carta-2').addClass('loaded');
   for(var i=0; i<3; i++){
     setTimeout(function(){
-      $('#carta-'+cartaCount).addClass('animacao-out');
-      $('#carta-'+cartaCount).addClass('final');
+      if (Modernizr.csstransitions && Modernizr.csstransforms){
+        animaCartaModerno();
+      } else {
+        animaCartaFallback();
+      }
       cartaCount++;
     },i*150);
   }
 }
-
 function updateDimensions(){
   var new_stage_height = Math.max($('#container').height(),$(window).height());
   // $('#debug').html($('#stage').css('height')+' '+$('#container').height());
@@ -78,10 +107,10 @@ function updateDimensions(){
 }
 function loaded(){
   body_element.addClass('loaded');
-  entraCartas();
   if (html_element.hasClass('ie6')){
     DD_belatedPNG.fix('#stage, #header-logo, .ficha, .card.basica, .card.back, #patrocinio-1, #patrocinio-2, #patrocinio-3, #patrocinio-4, #patrocinio-5, #patrocinio-6, #patrocinio-7');
   }
+  entraCartas();
 }
 function changeViewport(){
   var metas = document.getElementsByTagName('meta');

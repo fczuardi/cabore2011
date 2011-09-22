@@ -110,7 +110,6 @@ jQuery.extend( jQuery.easing,
 		return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
 	},
 	easeOutCirc: function (x, t, b, c, d) {
-	  console.log('.');
 		return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
 	},
 	easeInOutCirc: function (x, t, b, c, d) {
