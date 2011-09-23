@@ -135,7 +135,6 @@ nav{
   margin:0px;
   margin-top:84px;
   position:relative;
-/*  width:590px;*/
   white-space:nowrap;
 }
 
@@ -159,7 +158,15 @@ html.notie nav a.vegas:before {
 html.notie nav a.vegas:after {
   content: ' ✶';
 }
-
+nav.detalhe a{
+	position: absolute;
+	margin-left:610px;
+	margin-top:-114px;
+	opacity: .5;
+}
+nav.detalhe a:hover{
+	opacity: 1;
+}
 
 /************** FICHAS ********************/
 
