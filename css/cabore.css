@@ -398,7 +398,7 @@ body.indicados.detail #carta-2{
 
 /******* PAGE SPECIFIC STYLES *****/
 /*** INDICADOS ***/
-ul.indicados a:hover{
+ul.indicados li:hover{
   font-family: "FlamaSemicondensedSemibold";
   color: #fff;
   text-decoration: none;
