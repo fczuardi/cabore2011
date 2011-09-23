@@ -22,6 +22,7 @@
 ::selection{background-color: rgba(0,0,0,.2);}
 body{
   font-family: "FlamaSemicondensedBasic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:15px;
   background-color:#2a543d; /*vinho 6c2b2c*/
   width:100%;
 }
@@ -36,6 +37,12 @@ body a {
 body a:visited {
 	color: #fff;
 }
+body strong {
+  font-family: "FlamaSemicondensedSemibold";
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
 /************** TEXTO ********************/
 h2,h3 {
     font-weight: normal;
@@ -46,11 +53,11 @@ h2 {
   font-family: "FlamaSemicondensedBasic";
     text-align: center;
     text-transform: uppercase;
-    font-size: 15px;
     margin-top: -30px;
 }
 h3{
   font-family: "FlamaSemicondensedSemibold";
+	font-size:15px;
   margin-bottom:1em;
 }
 .colunaDeTexto{
@@ -62,12 +69,6 @@ h3{
   font-size: 15px;
   line-height: 21px;
   margin: 0px;
-}
-.colunaDeTexto p strong {
-  font-family: "FlamaSemicondensedSemibold";
-  text-decoration: none;
-  font-weight: normal;
-  font-style: normal;
 }
 .colunaDeTexto.noSidebar{
   padding: 48px;
