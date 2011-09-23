@@ -1,5 +1,8 @@
 # Todo
 
+Facebook Share metadata
+
+  * http://developers.facebook.com/docs/share/ (Configuring Meta Tags for Facebook Share)
 
 Link para PNG fixes no IE
 
@@ -14,3 +17,10 @@ Link para CSS fonts no IE
 Jquery queue usage:
 
   * https://gist.github.com/1233955
+  
+Optimize Modernizr ?
+
+  * to use a custom build: http://www.modernizr.com/download/
+  * tests and css classes we currently use:
+    * csstransitions
+    * csstransforms

@@ -152,10 +152,10 @@ nav a{
   text-transform:uppercase;
   color:#fff !important;
 }
-html.notie nav a.vegas:before {
+html.notie #link-promocao:before {
   content: '✶ ';
 }
-html.notie nav a.vegas:after {
+html.notie #link-promocao:after {
   content: ' ✶';
 }
 nav.detalhe a{

@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-var sombra_bg = '<div id="sombra-top"><img src="img/sombra-top.png" /></div><div id="sombra-bottom"><img src="img/sombra-bottom.png" /></div>';
+var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
     body_element,
@@ -79,7 +79,7 @@ function desceFichasFallback(targetX){
 }
 function desceFichas(name_or_targetX){
   var menuitem, item_width, item_left, targetX;
-  if (!name_or_targetX){return false;}
+  if ((!name_or_targetX)||(name_or_targetX == '{{page_section}}')){return false;}
   if (typeof name_or_targetX == 'string'){
     menuitem = $('#link-'+name_or_targetX);
     item_width = menuitem.width();
@@ -132,8 +132,6 @@ function menuitemClicked(event){
       , item_nome = link.attr('href').substring(1)
       , item = $('#link-'+item_nome);
   event.preventDefault();
-  console.log('menuitemClicked');
-  console.log(navigation_elements);
   if (item.hasClass('selected')){ return false; }
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
