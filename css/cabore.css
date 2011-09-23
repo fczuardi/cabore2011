@@ -34,6 +34,8 @@ body a {
 	text-decoration: none;
 	text-transform: uppercase;
 }
+body a,
+body a:hover,
 body a:visited {
 	color: #fff;
 }
@@ -435,7 +437,7 @@ body.indicados.detail #main{
 body.indicados.detail #sidebar{
   position: relative;
   top:-20px;
-  left:-70px;
+  left:30px;
 }
 
 /************ FOOTER *************/
