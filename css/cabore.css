@@ -63,12 +63,14 @@ h3{
   line-height: 21px;
   margin: 0px;
 }
-p.colunaDeTexto strong {
+.colunaDeTexto p strong {
   font-family: "FlamaSemicondensedSemibold";
-  color: #fff;
   text-decoration: none;
   font-weight: normal;
   font-style: normal;
+}
+.colunaDeTexto.noSidebar{
+  padding: 48px;
 }
 /************** LAYOUT ********************/
 #stage{
@@ -81,7 +83,6 @@ p.colunaDeTexto strong {
   width:768px;
   margin:auto;
   min-height:639px;
-/*  background-image:url(../img/ref-home.jpg);*/
   background-repeat:no-repeat;
   background-position:top center;
   position:relative;
