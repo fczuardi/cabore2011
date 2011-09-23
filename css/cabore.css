@@ -379,7 +379,9 @@ html.no-csstransforms body.home #carta-2.final{
   top:25px !important;
   opacity:1;
 }
-
+body.indicados.detail .card{
+  left:100px;
+}
 body.indicados.detail #carta-0{
  	top: 154px;
 }
@@ -443,8 +445,8 @@ body.indicados.detail #main{
 }
 body.indicados.detail #sidebar{
   position: relative;
-  top:-20px;
-  left:30px;
+  top:-10px;
+  left:-70px;
 }
 
 /************ FOOTER *************/
