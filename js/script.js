@@ -12,7 +12,8 @@ var html_element,
     is_iPad,
     is_webApp,
     cartaCount,
-    item_descida = null;
+    item_descida = null,
+    previous_selected_section;
 
 function addBrowserClasses(){
   if ($.browser.msie){
@@ -124,6 +125,7 @@ function fichaTransitioned(event){
     $(this).removeClass('animacao');
     if ((!fichas_elements.hasClass('animacao')) && (item_descida !== null)){
       desceFichas(item_descida);
+      body_element.addClass('section-'+item_descida);
     }
   }
 }
@@ -133,6 +135,8 @@ function menuitemClicked(event){
       , item = $('#link-'+item_nome);
   event.preventDefault();
   if (item.hasClass('selected')){ return false; }
+  console.log('menuitemClicked '+previous_selected_section);
+  body_element.removeClass('section-'+previous_selected_section);
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
     navigation_elements.removeClass('selected');
@@ -142,6 +146,7 @@ function menuitemClicked(event){
     desceFichas(item_nome);
   }
   item.addClass('selected');
+  previous_selected_section = item_nome;
 }
 function addListeners(){
   for (var i=0; i<fichas_elements.length; i++){
@@ -214,6 +219,8 @@ function updateDimensions(){
 }
 function loaded(){
   var page_name = body_element.data('page-name');
+  console.log(page_name);
+  previous_selected_section = page_name;
   body_element.addClass('loaded');
   if (html_element.hasClass('ie6')){
     DD_belatedPNG.fix('#stage, #header-logo, .ficha, .card.basica, .card.back, #patrocinio-1, #patrocinio-2, #patrocinio-3, #patrocinio-4, #patrocinio-5, #patrocinio-6, #patrocinio-7');

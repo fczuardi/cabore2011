@@ -1,5 +1,6 @@
 card_visual_order = [0, 1, 2]; //de baixo para cima
 card_css_top_values_for_slot = [154, 102, 50]; //valores para o top em cada um dos slots imaginários
+selected_card = 2;
 
 function init(){	
 	//aplica onClick nas cartas
@@ -26,10 +27,29 @@ function picTouchStart(event){
 function changeCardOrder(id){
 	//descobre o index do card em questão no array de ordem das cartas
 	var index = $.inArray(id, card_visual_order);
+	var time = 750;
 
   //ignora se ja estiver rolando animacao
   if ($('#carta-'+id).queue('fx').length > 0){return false};
   
+
+  //seleciona
+  var previous_selected = selected_card;
+  selected_card = id;
+  $('#carta-'+id+' .sem-foto a, #carta-'+previous_selected+' .sem-foto a').animate( {
+    'opacity': [0, 'easeInOutQuart']
+  },{
+      'duration': time * 0.4
+  });
+  setTimeout(function(){
+    $('.card').removeClass('selected');
+    $('#carta-'+selected_card).addClass('selected');
+  },time * 0.4);
+  $('.card .sem-foto a').animate( {
+    'opacity': [1, 'easeInOutQuart']
+  },{
+      'duration': time * 0.6
+  });
 
 	if(card_visual_order[index] != card_visual_order[card_visual_order.length - 1]){
 		//altera a ordem do array
@@ -38,10 +58,10 @@ function changeCardOrder(id){
 		
 		//atualiza a posição e o z-index
 		// updateCardPosition();
-		updateCardPositionAnimated(750);		
+		updateCardPositionAnimated(time);		
 	} else {
 		//
-		console.log("não preciso trabalhar, senhor");
+    // console.log("não preciso trabalhar, senhor");
 	}
 }
 
@@ -63,10 +83,12 @@ function updateCardPositionAnimated(time){
 	var offset_x = 176 + 10;
 	if(Math.random() > .5){offset_x *= -1}
 	var out_x = default_x + offset_x;
+	//
 	//percorre as cartas
 	for(var i=0; i< card_visual_order.length; i++){
 		var cardId = card_visual_order[i];
 		var carta = $('#carta-' + cardId);
+		var carta_link = $('#carta-' + cardId +' a');
 		var meioCaminho = (card_css_top_values_for_slot[i] + carta.position().top)/2;
 		
 		if(i == card_visual_order.length - 1){
@@ -75,12 +97,10 @@ function updateCardPositionAnimated(time){
 				'top': [meioCaminho, 'linear'],
 				'left': [out_x, 'easeInOutQuart']
 				}, time * .4);
-
 			//ajusta o z-index
 			carta.animate( {
 				'z-index':i
 				}, 0);
-
 			//anima o top até a posição final
 			carta.animate( {
 				'top': [card_css_top_values_for_slot[i], 'linear'],
@@ -91,12 +111,10 @@ function updateCardPositionAnimated(time){
 			carta.animate( {
 				'top': [meioCaminho, 'easeInQuart']
 				}, time * .5);
-
 			//ajusta o z-index
 			carta.animate( {
 				'z-index':i
 				}, 0);
-
 			//anima o top até a posição final
 			carta.animate( {
 				'top': [card_css_top_values_for_slot[i], 'easeOutQuart']

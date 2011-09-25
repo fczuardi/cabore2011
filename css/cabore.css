@@ -25,6 +25,11 @@ body{
 	font-size:15px;
   background-color:#2a543d; /*vinho 6c2b2c*/
   width:100%;
+  -moz-transition:    background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  -webkit-transition: background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  -o-transition:      background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  -ms-transition:     background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  transition:         background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
 }
 body.loaded{
     background-color:#4e9b70; /*vinho c85051*/  
@@ -70,7 +75,6 @@ h4{
 }
 .colunaDeTexto{
   padding: 48px;
-  padding-left: 253px;
   color: #fff;
 }
 .colunaDeTexto p {
@@ -78,8 +82,8 @@ h4{
   line-height: 21px;
   margin: 0px;
 }
-.colunaDeTexto.noSidebar{
-  padding: 48px;
+.section-indicados.detail .colunaDeTexto{
+  padding-left: 253px;
 }
 /************** LAYOUT ********************/
 #stage{
@@ -158,7 +162,7 @@ html.notie #link-promocao:before {
 html.notie #link-promocao:after {
   content: ' ✶';
 }
-nav.detalhe a{
+nav.back a{
 	position: absolute;
 	margin-left:610px;
 	margin-top:-114px;
@@ -295,13 +299,17 @@ html.lte8 .card .content{
     top: 31px;
     right: 30px;
 }
-.card .content.home{
+.card .content.sem-foto{
+  background-image:url(../img/carta-img-sem-foto.png);
+/*  background-image:url(../img/carta-ref-candidato-sem-foto.png);*/
+}
+.section-home .card .content{
   background-image:url(../img/carta-img-home.png);
 }
-.card .cabore {
+.section-cabore .card .content {
   background-image:url(../img/carta-img-trofeu.png);
 }
-.card.candidatos.comFoto a{
+.card.pessoa a{
     font-family: "FlamaSemicondensedSemibold";
     color: #784a00 !important; /*IE6*/
     text-decoration: none;
@@ -310,9 +318,19 @@ html.lte8 .card .content{
     font-style: normal;
     padding-top: 219px;
     text-align: center;
-    height:55px;
+    height:50px;
 }
-body.home #carta-1{
+.card.pessoa.selected .sem-foto a{
+  padding-left:33px;
+  padding-right:33px;
+  padding-top:120px;
+  height:150px;
+  font-size:19px;
+  color:#a38e71 !important;
+  width:110px;
+  
+}
+.section-home #carta-1{
   left:150px;
   top:52px;
   opacity:0.0;
@@ -322,7 +340,7 @@ body.home #carta-1{
   -ms-transform:rotate(-5deg);
   transform:rotate(-5deg);
 }
-body.home #carta-0{
+.section-home #carta-0{
   left:372px;
   top:52px;
   opacity:0.0;
@@ -332,15 +350,15 @@ body.home #carta-0{
   -ms-transform:rotate(5deg);
   transform:rotate(5deg);
 }
-body.home #carta-2{
+.section-home #carta-2{
   left:258px;
   top:52px;
   opacity:0.0;
 }
-body.home #carta-2.loaded{
+.section-home #carta-2.loaded{
   opacity:1;
 }
-body.home #carta-1.final{
+.section-home #carta-1.final{
   left:140px;
   top:32px;
   opacity:1;
@@ -350,7 +368,7 @@ body.home #carta-1.final{
   -ms-transform:rotate(-11deg);
   transform:rotate(-11deg);
 }
-body.home #carta-0.final{
+.section-home #carta-0.final{
   left:382px;
   top:32px;
   opacity:1;
@@ -360,35 +378,35 @@ body.home #carta-0.final{
   -ms-transform:rotate(11deg);
   transform:rotate(11deg);
 }
-body.home #carta-2.final{
+.section-home #carta-2.final{
   top:32px;
   opacity:1;
 }
-html.no-csstransforms body.home #carta-0,
-html.no-csstransforms body.home #carta-0.final{
+html.no-csstransforms .section-home #carta-0,
+html.no-csstransforms .section-home #carta-0.final{
   top:35px;
   opacity:1;
 }
-html.no-csstransforms body.home #carta-1,
-html.no-csstransforms body.home #carta-1.final{
+html.no-csstransforms .section-home #carta-1,
+html.no-csstransforms .section-home #carta-1.final{
   top:35px;
   opacity:1;
 }
-html.no-csstransforms body.home #carta-2,
-html.no-csstransforms body.home #carta-2.final{
+html.no-csstransforms .section-home #carta-2,
+html.no-csstransforms .section-home #carta-2.final{
   top:25px !important;
   opacity:1;
 }
-body.indicados.detail .card{
+body.section-indicados.detail .card{
   left:100px;
 }
-body.indicados.detail #carta-0{
+body.section-indicados.detail #carta-0{
  	top: 154px;
 }
-body.indicados.detail #carta-1{
+body.section-indicados.detail #carta-1{
 	top: 102px;
 }
-body.indicados.detail #carta-2{
+body.section-indicados.detail #carta-2{
 	top: 50px;
 }
 
@@ -409,46 +427,53 @@ body.indicados.detail #carta-2{
 
 /******* PAGE SPECIFIC STYLES *****/
 /*** INDICADOS ***/
-ul.indicados li:hover{
+.section-indicados #main ul li:hover{
   font-family: "FlamaSemicondensedSemibold";
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
 }
-ul.indicados {
+.section-indicados #main ul {
   list-style: none;
   margin:0px;
   padding:40px;
   padding-top:42px;
 }
-ul.indicados li{
+.section-indicados #main ul li{
   height: 38px;
 }
-ul.indicados li.last{
+.section-indicados #main ul li.last{
   height: 15px;
 }
-ul.indicados li.duasLinhas{
+.section-indicados #main ul li.duasLinhas{
   height: 52px;
 }
-ul.coluna1{
+.section-indicados #main ul.coluna1{
   float: left;
   width: 240px;
   padding-left: 120px;
 }
-ul.coluna2 li{
+.section-indicados #main ul.coluna2 li{
   height: 34px;
 }
 
 /** INDICADOS DETALHES **/
-body.indicados.detail #main{
+body.section-indicados.detail #main{
   min-height:410px;
 }
-body.indicados.detail #sidebar{
+body.section-indicados.detail #sidebar{
   position: relative;
   top:-10px;
   left:-70px;
 }
 
+/** PROMOCAO **/
+body.section-promocao{
+  background-color:#6c2b2c;
+}
+body.section-promocao.loaded{
+  background-color:#c85051;
+}
 /************ FOOTER *************/
 footer{
   position: relative;
