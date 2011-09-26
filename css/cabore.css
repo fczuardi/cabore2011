@@ -78,6 +78,7 @@ h4{
 .colunaDeTexto{
   padding: 48px;
   color: #fff;
+  margin:0px;
 }
 .colunaDeTexto p {
   font-size: 15px;
@@ -442,6 +443,7 @@ body.section-indicados.detail #carta-2{
   margin:0px;
   padding:40px;
   padding-top:42px;
+  float: left;
 }
 .section-indicados #main ul li{
   height: 38px;
@@ -453,7 +455,6 @@ body.section-indicados.detail #carta-2{
   height: 52px;
 }
 .section-indicados #main ul.coluna1{
-  float: left;
   width: 240px;
   padding-left: 120px;
 }
