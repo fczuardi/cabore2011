@@ -62,6 +62,8 @@ h2 {
 	text-align: center;
 	text-transform: uppercase;
 	margin-top: -30px;
+	width:100%;
+	position:absolute;
 }
 h3{
   font-family: "FlamaSemicondensedSemibold";
@@ -133,7 +135,7 @@ footer{
   background-image:url(../img/logo.png);
   background-repeat:no-repeat;
 }
-nav{
+header nav{
   float:left;
   left:34px;
   margin:0px;
@@ -162,13 +164,15 @@ html.notie #link-promocao:before {
 html.notie #link-promocao:after {
   content: ' ✶';
 }
-nav.back a{
+#main nav.back{
 	position: absolute;
-	margin-left:610px;
-	margin-top:-114px;
-	opacity: .5;
+  top:-30px;
+  left:610px;
 }
-nav.detalhe a:hover{
+#main nav.back a{
+  opacity: 0.5;
+}
+#main nav.back a:hover{
 	opacity: 1;
 }
 
