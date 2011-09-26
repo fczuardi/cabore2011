@@ -78,25 +78,27 @@ function desceFichasFallback(targetX){
     }
   }
 }
-function desceFichas(name_or_targetX){
-  var menuitem, item_width, item_left, targetX;
-  if ((!name_or_targetX)||(name_or_targetX == '{{page_section}}')){return false;}
-  if (typeof name_or_targetX == 'string'){
-    menuitem = $('#link-'+name_or_targetX);
-    item_width = menuitem.width();
-    item_left = menuitem.position().left;
-    targetX = item_left+item_width/2+203-60;
-  } else{
-    targetX = name_or_targetX;
-  }
+function desceFichas(name){
+  console.log('desceFichas');
+  var menuitem, item_width, item_left, targetX, espera=0;
+  if ((!name)||(name == '{{page_section}}')){return false;}
+  menuitem = $('#link-'+name);
+  item_width = menuitem.width();
+  item_left = menuitem.position().left;
+  targetX = item_left+item_width/2+203-60;
   for (var i=0; i<fichas_elements.length; i++){
     $(fichas_elements[i]).css('left', targetX);
   }
-  if (Modernizr.csstransitions){
-    desceFichasModerno(targetX);
-  } else {
-    desceFichasFallback(targetX);
-  }  
+  if(name == 'promocao'){
+    espera = 500;
+  }
+  setTimeout(function(){
+    if (Modernizr.csstransitions){
+      desceFichasModerno(targetX);
+    } else {
+      desceFichasFallback(targetX);
+    }  
+  }, espera);
 }
 function sobeFichas(){
   var   ficha
@@ -119,6 +121,7 @@ function sobeFichas(){
   }
 }
 function fichaTransitioned(event){
+  console.log('fichaTransitioned');
   //ficha terminou de subir
   if ($(this).hasClass('animacao-in')){
     $(this).removeClass('animacao-in');
@@ -130,9 +133,11 @@ function fichaTransitioned(event){
   }
 }
 function menuitemClicked(event){
+  console.log('menuitemClicked');
   var   link = $(this)
       , item_nome = link.attr('href').substring(1)
-      , item = $('#link-'+item_nome);
+      , item = $('#link-'+item_nome)
+      , espera = 0;
   event.preventDefault();
   if (item.hasClass('selected')){ return false; }
   console.log('menuitemClicked '+previous_selected_section);
@@ -140,8 +145,11 @@ function menuitemClicked(event){
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
     navigation_elements.removeClass('selected');
+    if(item_descida == 'promocao'){
+      espera = 500;
+    }
     item_descida = item_nome;
-    sobeFichas();
+    setTimeout(sobeFichas, espera);
   } else {
     desceFichas(item_nome);
   }
@@ -218,8 +226,8 @@ function updateDimensions(){
   $('#stage').css('height',new_stage_height);
 }
 function loaded(){
+  console.log('Loaded');
   var page_name = body_element.data('page-name');
-  console.log(page_name);
   previous_selected_section = page_name;
   body_element.addClass('loaded');
   if (html_element.hasClass('ie6')){
@@ -228,6 +236,7 @@ function loaded(){
   if (page_name == 'home'){
     entraCartas();
   } else {
+    item_descida = page_name;
     desceFichas(page_name);
     $('#link-'+page_name).addClass('selected');
   }
