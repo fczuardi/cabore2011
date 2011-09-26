@@ -25,11 +25,11 @@ body{
 	font-size:15px;
   background-color:#2a543d; /*vinho 6c2b2c*/
   width:100%;
-  -moz-transition:    background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
-  -webkit-transition: background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
-  -o-transition:      background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
-  -ms-transition:     background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
-  transition:         background-color  1.5s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  -moz-transition:    background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  -webkit-transition: background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  -o-transition:      background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  -ms-transition:     background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
+  transition:         background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
 }
 body.loaded{
     background-color:#4e9b70; /*vinho c85051*/  
@@ -84,7 +84,7 @@ h4{
   line-height: 21px;
   margin: 0px;
 }
-.section-indicados.detail .colunaDeTexto{
+.colunaDeTexto.comSidebar{
   padding-left: 253px;
 }
 /************** LAYOUT ********************/
