@@ -81,6 +81,7 @@ function desceFichasFallback(targetX){
 function desceFichas(name){
   var menuitem, item_width, item_left, targetX, espera=0;
   if ((!name)||(name == '{{page_section}}')){return false;}
+  $('#page-content').html('');
   body_element.removeClass('section-'+previous_selected_section);
   body_element.addClass('section-'+name);
   loadPage(name);
@@ -107,7 +108,7 @@ function desceFichas(name){
 function sobeFichas(){
   var   ficha
       , durations = [700, 300, 500]; //from cabore.css
-  if (!$(fichas_elements[0]).hasClass('animacao')){return false;}
+  $('#page-content').fadeOut();
   for (var i=0; i<fichas_elements.length; i++){
     ficha = $(fichas_elements[i]);
     ficha.removeClass('animacao-out');
@@ -135,7 +136,9 @@ function fichaTransitioned(event){
   }
 }
 function loadPage(name){
-  $('#main').load('/content/'+name+'.html');
+  $('#page-content').load('/content/'+name+'.html', function() {
+    $('#page-content').fadeIn();
+  });
 }
 function menuitemClicked(event){
   var   link = $(this)
@@ -144,18 +147,15 @@ function menuitemClicked(event){
       , espera = 0;
   event.preventDefault();
   if (item.hasClass('selected')){ return false; }
-  $('#main').html('');
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
     navigation_elements.removeClass('selected');
     if(item_descida == 'promocao'){
       espera = 500;
     }
-    item_descida = item_nome;
-    setTimeout(sobeFichas, espera);
-  } else {
-    desceFichas(item_nome);
   }
+  item_descida = item_nome;
+  setTimeout(sobeFichas, espera);
   item.addClass('selected');
 }
 function addListeners(){
@@ -238,8 +238,10 @@ function loaded(){
     entraCartas();
   } else {
     item_descida = page_name;
-    desceFichas(page_name);
+    $('#page-content').fadeOut();
     $('#link-'+page_name).addClass('selected');
+    setTimeout(sobeFichas, 1000);
+    // desceFichas(page_name);
   }
 }
 function changeViewport(){
