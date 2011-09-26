@@ -81,6 +81,11 @@ function desceFichasFallback(targetX){
 function desceFichas(name){
   var menuitem, item_width, item_left, targetX, espera=0;
   if ((!name)||(name == '{{page_section}}')){return false;}
+  body_element.removeClass('section-'+previous_selected_section);
+  body_element.addClass('section-'+name);
+  loadPage(name);
+  previous_selected_section = name;
+  
   menuitem = $('#link-'+name);
   item_width = menuitem.width();
   item_left = menuitem.position().left;
@@ -140,8 +145,6 @@ function menuitemClicked(event){
   event.preventDefault();
   if (item.hasClass('selected')){ return false; }
   $('#main').html('');
-  body_element.removeClass('section-'+previous_selected_section);
-  body_element.addClass('section-'+item_nome);
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
     navigation_elements.removeClass('selected');
@@ -154,8 +157,6 @@ function menuitemClicked(event){
     desceFichas(item_nome);
   }
   item.addClass('selected');
-  previous_selected_section = item_nome;
-  loadPage(item_nome);
 }
 function addListeners(){
   for (var i=0; i<fichas_elements.length; i++){
