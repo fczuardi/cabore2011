@@ -324,7 +324,7 @@ html.lte8 .card .content{
     text-align: center;
     height:50px;
 }
-.card.pessoa.selected .sem-foto a{
+.section-indicados.categoria .card.pessoa .sem-foto a{
   padding-left:33px;
   padding-right:33px;
   padding-top:120px;
