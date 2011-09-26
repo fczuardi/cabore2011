@@ -11,6 +11,7 @@
   
   page_title        - ex: "Caboré 2011 - Votação"
   page_section      - home|cabore|indicados|votacao|promocao|premiacao|festa
+  extra_classes     - any extra css class to be applied at the main, for example: detail|categoria
   content           - innerHTML of the #main div
   -->
   <meta charset="utf-8">
@@ -45,7 +46,7 @@
   <script src="/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
-<body data-page-name="{{page_section}}" class="section-{{page_section}}" id="corpo" onorientationchange="updateDimensions();">
+<body data-page-name="{{page_section}}" class="section-{{page_section}} {{extra_classes}}" id="corpo" onorientationchange="updateDimensions();">
 <div id="stage">
   <div id="container">
     <header>

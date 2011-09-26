@@ -79,7 +79,6 @@ function desceFichasFallback(targetX){
   }
 }
 function desceFichas(name){
-  console.log('desceFichas');
   var menuitem, item_width, item_left, targetX, espera=0;
   if ((!name)||(name == '{{page_section}}')){return false;}
   menuitem = $('#link-'+name);
@@ -121,27 +120,28 @@ function sobeFichas(){
   }
 }
 function fichaTransitioned(event){
-  console.log('fichaTransitioned');
   //ficha terminou de subir
   if ($(this).hasClass('animacao-in')){
     $(this).removeClass('animacao-in');
     $(this).removeClass('animacao');
     if ((!fichas_elements.hasClass('animacao')) && (item_descida !== null)){
       desceFichas(item_descida);
-      body_element.addClass('section-'+item_descida);
     }
   }
 }
+function loadPage(name){
+  $('#main').load('/content/'+name+'.html');
+}
 function menuitemClicked(event){
-  console.log('menuitemClicked');
   var   link = $(this)
       , item_nome = link.attr('href').substring(1)
       , item = $('#link-'+item_nome)
       , espera = 0;
   event.preventDefault();
   if (item.hasClass('selected')){ return false; }
-  console.log('menuitemClicked '+previous_selected_section);
+  $('#main').html('');
   body_element.removeClass('section-'+previous_selected_section);
+  body_element.addClass('section-'+item_nome);
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
     navigation_elements.removeClass('selected');
@@ -155,6 +155,7 @@ function menuitemClicked(event){
   }
   item.addClass('selected');
   previous_selected_section = item_nome;
+  loadPage(item_nome);
 }
 function addListeners(){
   for (var i=0; i<fichas_elements.length; i++){
@@ -226,7 +227,6 @@ function updateDimensions(){
   $('#stage').css('height',new_stage_height);
 }
 function loaded(){
-  console.log('Loaded');
   var page_name = body_element.data('page-name');
   previous_selected_section = page_name;
   body_element.addClass('loaded');
