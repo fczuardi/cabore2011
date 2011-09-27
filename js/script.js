@@ -13,7 +13,8 @@ var html_element,
     is_webApp,
     cartaCount,
     item_descida = null,
-    previous_selected_section;
+    previous_selected_section,
+    template_name;
 
 function addBrowserClasses(){
   if ($.browser.msie){
@@ -84,7 +85,7 @@ function desceFichas(name){
   $('#page-content').html('');
   body_element.removeClass('section-'+previous_selected_section);
   body_element.addClass('section-'+name);
-  loadPage(name);
+  loadSection(name);
   previous_selected_section = name;
   
   menuitem = $('#link-'+name);
@@ -113,6 +114,7 @@ function sobeFichas(){
     ficha = $(fichas_elements[i]);
     ficha.removeClass('animacao-out');
     ficha.addClass('animacao-in');
+    ficha.addClass('animacao');
     if (Modernizr.csstransitions){
       ficha.css('top', ficha.position().top - 130);
     } else {
@@ -130,15 +132,47 @@ function fichaTransitioned(event){
   if ($(this).hasClass('animacao-in')){
     $(this).removeClass('animacao-in');
     $(this).removeClass('animacao');
-    if ((!fichas_elements.hasClass('animacao')) && (item_descida !== null)){
+    if ((!$('.ficha').hasClass('animacao')) && (item_descida !== null)){
       desceFichas(item_descida);
     }
   }
 }
-function loadPage(name){
+function loadSection(name){
   $('#page-content').load('/content/'+name+'.html', function() {
     $('#page-content').fadeIn();
+    body_element.removeClass('detail');
+    if (body_element.hasClass('section-indicados')){
+      $('#page-content ul a').bind('click',categoriaLinkClicked);
+    }
   });
+}
+function loadCategoria(path){
+  var content_path = path.replace('indicados', 'content');
+  var path_parts = content_path.split('/');
+  if (path_parts.length == 6){
+    path_parts.splice(4,1);
+    content_path = path_parts.join('/');
+    template_name = 'detalhes';
+  }else{
+    template_name = 'lista';
+  }
+  body_element.removeClass('detail');
+  $('#page-content').fadeOut(500, function(){
+    $('#page-content').load(content_path+template_name+'.html', function() {
+      if (template_name == 'lista'){
+        $('#page-content .card .content a').bind('click',categoriaLinkClicked);
+      }else{
+        body_element.addClass('detail');
+        cardAnimationInit();
+      }
+      $('#page-content').fadeIn();
+    });
+  });
+}
+function categoriaLinkClicked(event){
+  console.log('categoriaLinkClicked !');
+  event.preventDefault();
+  loadCategoria($(this).attr('href'));
 }
 function menuitemClicked(event){
   var   link = $(this)
@@ -260,7 +294,6 @@ function changeViewport(){
 function init(){
   html_element = $('html');
   body_element = $('body');
-  fichas_elements = [$('#ficha-0'),$('#ficha-1'),$('#ficha-2')];
   fichas_elements = $('.ficha');
   cartas_elements = [$('#carta-0'),$('#carta-1'),$('#carta-2')];
   navigation_elements = $('header nav a');

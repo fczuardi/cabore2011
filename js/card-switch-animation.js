@@ -1,7 +1,8 @@
 card_visual_order = [0, 1, 2]; //de baixo para cima
 card_css_top_values_for_slot = [154, 102, 50]; //valores para o top em cada um dos slots imaginários
 
-function init(){	
+function cardAnimationInit(){	
+  console.log('INIT CARD ANIM')
 	//aplica onClick nas cartas
 	$('#carta-0 a').click(function(event){
     event.preventDefault();  
@@ -106,4 +107,4 @@ function updateCardPositionAnimated(time){
 }
 
 //chama o init quando carregar o DOM
-$(init);
+// $(init);
