@@ -84,6 +84,7 @@ function desceFichas(name){
   if ((!name)||(name == '{{page_section}}')){return false;}
   $('#page-content').html('');
   body_element.removeClass('section-'+previous_selected_section);
+  body_element.addClass('animacao');
   body_element.addClass('section-'+name);
   loadSection(name);
   previous_selected_section = name;
@@ -157,9 +158,9 @@ function loadCategoria(path){
   }else{
     template_name = 'lista';
   }
-  body_element.removeClass('detail');
-  body_element.removeClass('categoria');
   $('#page-content').fadeOut(500, function(){
+    body_element.removeClass('detail');
+    body_element.removeClass('categoria');
     $('#page-content').load(content_path+template_name+'.html', function() {
       if (template_name == 'lista'){
         $('#page-content .card .content a').bind('click',categoriaLinkClicked);
@@ -268,6 +269,7 @@ function loaded(){
   var page_name = body_element.data('page-name');
   previous_selected_section = page_name;
   body_element.addClass('loaded');
+  $('#stage').css('visibility','visible');
   if (html_element.hasClass('ie6')){
     DD_belatedPNG.fix('#stage, #header-logo, .ficha, .card.basica, .card.back, #patrocinio-1, #patrocinio-2, #patrocinio-3, #patrocinio-4, #patrocinio-5, #patrocinio-6, #patrocinio-7');
   }

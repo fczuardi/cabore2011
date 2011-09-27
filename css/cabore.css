@@ -25,6 +25,8 @@ body{
 	font-size:15px;
   background-color:#2a543d; /*vinho 6c2b2c*/
   width:100%;
+}
+body.animacao{
   -moz-transition:    background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
   -webkit-transition: background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
   -o-transition:      background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
@@ -94,6 +96,7 @@ h4{
   position:relative;
   height:1024px;
   background-image:url(../img/micro-bg.png);
+  visibility:hidden;
 }
 #container{
   width:768px;
