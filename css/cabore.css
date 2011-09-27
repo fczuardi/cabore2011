@@ -135,6 +135,12 @@ footer{
   position:relative;
   background-image:url(../img/logo.png);
   background-repeat:no-repeat;
+  overflow:hidden;
+}
+#header-logo-link{
+  margin-top:-100px;
+  padding-bottom:203px;
+  position:absolute;
 }
 header nav{
   float:left;
