@@ -308,6 +308,9 @@ html.lte8 .card .content{
   background-image:url(../img/carta-img-sem-foto.png);
 /*  background-image:url(../img/carta-ref-candidato-sem-foto.png);*/
 }
+.section-indicados .card .content.sem-foto{
+	background-position: 0px 35px;
+}
 .section-home .card .content{
   background-image:url(../img/carta-img-home.png);
 }
@@ -328,12 +331,14 @@ html.lte8 .card .content{
 .section-indicados.categoria .card.pessoa .sem-foto a{
   padding-left:33px;
   padding-right:33px;
-  padding-top:120px;
+  padding-top:130px;
   height:150px;
   font-size:19px;
   color:#a38e71 !important;
-  width:110px;
-  
+  width:110px;  
+}
+.section-indicados.categoria .card.pessoa .sem-foto.nome-em-2-linhas a{
+  padding-top:120px;
 }
 .section-home #carta-1{
   left:150px;
