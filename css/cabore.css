@@ -18,8 +18,8 @@
     font-weight: normal;
     font-style: normal;
 }
-::-moz-selection{background-color: rgba(0,0,0,.2);}
-::selection{background-color: rgba(0,0,0,.2);}
+::-moz-selection{background-color: #AF973E;}
+::selection{background-color: #AF973E;}
 body{
   font-family: "FlamaSemicondensedBasic", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:15px;
