@@ -298,6 +298,9 @@ easeInOutCirc:  '0.785, 0.135, 0.150, 0.860'
   background-repeat:no-repeat;
   background-position:0px 45px;
 }
+.card .content.no-link{
+  background-position:0px 0px;
+}
 html.lte8 .card .content{
   background-position:0px 0px;
 }
