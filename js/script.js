@@ -179,6 +179,7 @@ function categoriaLinkClicked(event){
   loadCategoria($(this).attr('href'));
 }
 function menuitemClicked(event){
+  console.log('menuitemClicked');
   var   link = $(this)
       , item_nome = link.attr('href').substring(1)
       , item = $('#link-'+item_nome)
@@ -207,7 +208,6 @@ function addListeners(){
     }
   }
   navigation_elements.bind('click',menuitemClicked);
-  $('.home #carta-2 a').bind('click',menuitemClicked);
 }
 function animaCartaModerno(){
   var carta = $('#carta-'+cartaCount);
@@ -281,6 +281,9 @@ function loaded(){
     $('#link-'+page_name).addClass('selected');
     setTimeout(sobeFichas, 1000);
     // desceFichas(page_name);
+  }
+  if (body_element.hasClass('section-home')){
+    $('#carta-2 a').bind('click',menuitemClicked);
   }
 }
 function changeViewport(){
