@@ -141,6 +141,7 @@ function loadSection(name){
   $('#page-content').load('/content/'+name+'.html', function() {
     $('#page-content').fadeIn();
     body_element.removeClass('detail');
+    body_element.removeClass('categoria');
     if (body_element.hasClass('section-indicados')){
       $('#page-content ul a').bind('click',categoriaLinkClicked);
     }
@@ -157,10 +158,12 @@ function loadCategoria(path){
     template_name = 'lista';
   }
   body_element.removeClass('detail');
+  body_element.removeClass('categoria');
   $('#page-content').fadeOut(500, function(){
     $('#page-content').load(content_path+template_name+'.html', function() {
       if (template_name == 'lista'){
         $('#page-content .card .content a').bind('click',categoriaLinkClicked);
+        body_element.addClass('categoria');
       }else{
         body_element.addClass('detail');
         cardAnimationInit();

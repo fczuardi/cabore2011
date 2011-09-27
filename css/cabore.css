@@ -468,6 +468,7 @@ body.section-indicados.detail #carta-2{
 .section-indicados #main ul.coluna1{
   width: 240px;
   padding-left: 120px;
+  padding-right:0px;
 }
 .section-indicados #main ul.coluna2 li{
   height: 34px;
