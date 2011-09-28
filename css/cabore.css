@@ -147,7 +147,8 @@ footer{
 }
 header nav{
   float:left;
-  left:34px;
+/*  left:34px;*/
+  left:91px;
   margin:0px;
   margin-top:84px;
   position:relative;
@@ -519,7 +520,8 @@ footer li a{
   display: block;
   height: 200px;
   margin-top: -100px;
-  width: 100%;  
+  width: 100%;
+  white-space:nowrap;
 }
 #patrocinio-1{
   background-image:url(../img/patrocinadores/patrocinadores_01.png);

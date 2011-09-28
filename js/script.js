@@ -92,7 +92,9 @@ function desceFichas(name){
   menuitem = $('#link-'+name);
   item_width = menuitem.width();
   item_left = menuitem.position().left;
-  targetX = item_left+item_width/2+203-60;
+  logo_width = 108;
+  nav_left = 91;
+  targetX = item_left+item_width/2 + logo_width + nav_left;
   for (var i=0; i<fichas_elements.length; i++){
     $(fichas_elements[i]).css('left', targetX);
   }
