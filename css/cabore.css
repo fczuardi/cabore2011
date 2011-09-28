@@ -449,7 +449,7 @@ body.section-indicados.detail #carta-2{
 
 /******* PAGE SPECIFIC STYLES *****/
 /*** INDICADOS ***/
-.section-indicados #main ul li:hover{
+.section-indicados #main ul li:hover a{
   font-family: "FlamaSemicondensedSemibold";
   color: #fff;
   text-decoration: none;
