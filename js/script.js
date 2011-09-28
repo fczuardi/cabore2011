@@ -1,19 +1,21 @@
 /* Author: 
 
 */
+var cache_version = 3;
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
     body_element,
     fichas_elements,
-    cartas_elements,
     navigation_elements,
     is_iPhone,
     is_iPad,
     is_webApp,
     cartaCount,
-    item_descida = null,
+    section_descida = null,
+    path_descida = null,
     previous_selected_section,
+    is_section_internal = false,
     template_name;
 
 function addBrowserClasses(){
@@ -86,8 +88,15 @@ function desceFichas(name){
   body_element.removeClass('section-'+previous_selected_section);
   body_element.addClass('animacao');
   body_element.addClass('section-'+name);
-  loadSection(name);
+  if (! is_section_internal) {
+    loadSection(name);
+  } else{
+    loadCategoria(path_descida);
+    is_section_internal = false;
+  }
   previous_selected_section = name;
+  
+  if (name == 'home'){ return false; }
   
   menuitem = $('#link-'+name);
   item_width = menuitem.width();
@@ -135,16 +144,76 @@ function fichaTransitioned(event){
   if ($(this).hasClass('animacao-in')){
     $(this).removeClass('animacao-in');
     $(this).removeClass('animacao');
-    if ((!$('.ficha').hasClass('animacao')) && (item_descida !== null)){
-      desceFichas(item_descida);
+    if ((!$('.ficha').hasClass('animacao')) && (section_descida !== null)){
+      desceFichas(section_descida);
+    }
+  }
+}
+
+function updateMeta(){
+  var html = $('#page-content').html();
+  var pattern = /<!--([^<]*)-->/;
+  var first_comment_matches = html.match(pattern);
+  var comment_lines, comment_line_parts;
+  var meta = {
+    'title': 'Caboré 2011'
+  }
+  if (first_comment_matches){
+    comment_lines = first_comment_matches[0].split('\n');
+    for (var i=1; i < comment_lines.length-1; i++){
+      comment_line_parts = comment_lines[i].split(':');
+      meta[comment_line_parts[0]] = comment_line_parts[1].trim();
+    }
+  }
+  document.title = meta.title;
+  // if (typeof meta.title !== 'undefined'){
+  // }
+}
+function loadContent(path){
+  var pattern = /([^\/]+)/ig;
+  var path_parts = path.match(pattern);
+  var page_name;
+  if (path_parts == null){
+    section_descida = 'home';
+    sobeFichas();
+  } else {
+    page_name = path_parts[0];
+    section_descida = page_name;
+    $('#link-'+page_name).addClass('selected');
+    if (path_parts.length == 1){
+      //section
+      $('#page-content').fadeOut();
+      if (path_parts[0] != previous_selected_section){
+        sobeFichas();
+      } else {
+        console.log('FOO');
+        setTimeout(function(){
+          loadSection(section_descida);
+        }, 500);
+      }
+    } else {
+      //categoria
+      if (path_parts[0] != previous_selected_section){
+        is_section_internal = true;
+        path_descida = path;
+        sobeFichas();
+      } else {
+        loadCategoria(path);
+      }
     }
   }
 }
 function loadSection(name){
-  $('#page-content').load('/content/'+name+'.html', function() {
+  console.log('LoadSection '+name);
+  $('#page-content').load('/content/'+name+'.html?v='+cache_version, function() {
+    updateMeta();
     $('#page-content').fadeIn();
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
+    if (body_element.hasClass('section-home')){
+      console.log('hey');
+      entraCartas();
+    }
     if (body_element.hasClass('section-indicados')){
       $('#page-content ul a').bind('click',categoriaLinkClicked);
     }
@@ -164,6 +233,7 @@ function loadCategoria(path){
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
     $('#page-content').load(content_path+template_name+'.html', function() {
+      updateMeta();
       if (template_name == 'lista'){
         $('#page-content .card .content a').bind('click',categoriaLinkClicked);
         body_element.addClass('categoria');
@@ -176,27 +246,32 @@ function loadCategoria(path){
   });
 }
 function categoriaLinkClicked(event){
-  console.log('categoriaLinkClicked !');
   event.preventDefault();
+  if (Modernizr.history){
+    history.pushState(null, null, $(this).attr('href'));
+  }
   loadCategoria($(this).attr('href'));
 }
 function menuitemClicked(event){
-  console.log('menuitemClicked');
-  var   link = $(this)
-      , item_nome = link.attr('href').substring(1)
-      , item = $('#link-'+item_nome)
-      , espera = 0;
   event.preventDefault();
+  var   link = $(this)
+      , item_nome = link.attr('href').replace(/\/|\#/g,'')
+      , item = $('#link-'+item_nome.substring(1))
+      , espera = 0;
+  if (Modernizr.history){
+    history.pushState(null, null, $(this).attr('href'));
+  }
   if (item.hasClass('selected')){ return false; }
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
     navigation_elements.removeClass('selected');
-    if(item_descida == 'promocao'){
+    if(section_descida == 'promocao'){
       espera = 500;
     }
   }
-  item_descida = item_nome;
-  setTimeout(sobeFichas, espera);
+  loadContent(item_nome)
+  // section_descida = item_nome;
+  // setTimeout(sobeFichas, espera);
   item.addClass('selected');
 }
 function addListeners(){
@@ -210,6 +285,9 @@ function addListeners(){
     }
   }
   navigation_elements.bind('click',menuitemClicked);
+  window.addEventListener("popstate", function(e) {
+      loadContent(location.pathname);
+  }, true);
 }
 function animaCartaModerno(){
   var carta = $('#carta-'+cartaCount);
@@ -278,11 +356,10 @@ function loaded(){
   if (page_name == 'home'){
     entraCartas();
   } else {
-    item_descida = page_name;
+    section_descida = page_name;
     $('#page-content').fadeOut();
     $('#link-'+page_name).addClass('selected');
     setTimeout(sobeFichas, 1000);
-    // desceFichas(page_name);
   }
   if (body_element.hasClass('section-home')){
     $('#carta-2 a').bind('click',menuitemClicked);
@@ -305,7 +382,6 @@ function init(){
   html_element = $('html');
   body_element = $('body');
   fichas_elements = $('.ficha');
-  cartas_elements = [$('#carta-0'),$('#carta-1'),$('#carta-2')];
   navigation_elements = $('header nav a');
   is_iPhone = (navigator.userAgent.match(/iPhone/i) !== null);
   is_iPad = (navigator.userAgent.match(/iPad/i) !== null);
