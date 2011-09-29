@@ -66,7 +66,7 @@ class Template(object):
         self.section_re = re.compile(section % tags, re.M|re.S)
 
         tag = r"%(otag)s(#|=|&|!|>|\{)?(.+?)\1?%(ctag)s+"
-        self.tag_re = re.compile(tag % tags)
+        self.tag_re = re.compile(tag % tags,re.DOTALL)
 
     def _render_sections(self, template, view):
         while True:
