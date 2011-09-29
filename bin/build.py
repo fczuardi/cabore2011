@@ -2,11 +2,11 @@
 
 from __future__ import with_statement
 
-import os, sys
+import os, sys, re, codecs
 base = os.path.abspath(os.path.dirname(__file__))
 templates_dir = os.path.join(base,os.path.pardir, 'templates')
 content_dir = os.path.join(base,os.path.pardir, 'content')
-output_dir = os.path.join(base,os.path.pardir, 'www')
+output_dir = os.path.join(base,os.path.pardir, 'build')
 
 
 sys.path.append(os.path.join(base, 'lib'))
@@ -14,121 +14,41 @@ import pystache
 loader = pystache.Loader()
 template = loader.load_template('main', templates_dir, 'utf-8', 'html')
 
-pessoas = {
-  'JairoLeal': {
-    'nome': 'Jairo Leal',
-    'description': ''
-  }
-}
-categorias = [
-  {
-    'slug': 'empresario_ou_dirigente',
-    'title': 'Empresário ou dirigente da indústria da comunicação'
-    'concorrentes': [
-      'Jairo Leal',
-      'description',
-      ''
-    ]
-  },
-  {
-    'slug': 'agencia',
-  },
-  {
-    'slug': 'profissional_criacao',
-  },
-  {
-    'slug': 'profissional_atendimento',
-  },
-  {
-    'slug': 'profissional_planejamento',
-  },
-  {
-    'slug': 'veiculo_midia_eletronica',
-  },
-  {
-    'slug': 'veiculo_midia_impressa',
-  },
-  {
-    'slug': 'profissional_midia',
-  },
-  {
-    'slug': 'profissional_veiculo',
-  },
-  {
-    'slug': 'anunciante',
-  },
-  {
-    'slug': 'profissional_marketing',
-  },
-  {
-    'slug': 'servico_especializado',
-  },
-  {
-    'slug': 'producao_publicitaria',
-  }  
-]
-page_arguments = {
-  'cabore':{
-    'page_title': 'Caboré 2011',
-    'page_section': 'cabore',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'cabore.html'), 'r').read()
-  },
-  'indicados':{
-    'page_title': 'Caboré 2011 - Indicados',
-    'page_section': 'indicados',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'indicados.html'), 'r').read()
-  },
-  'indicados.categoria':{
-    'page_title': 'Caboré 2011 - Indicados',
-    'page_section': 'indicados',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'indicados.categoria.html'), 'r').read()
-  },
-  'indicados.categoria.detalhes':{
-    'page_title': 'Caboré 2011 - Votação',
-    'page_section': 'cabore',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'cabore.html'), 'r').read()
-  },
-  'cabore':{
-    'page_title': 'Caboré 2011 - Votação',
-    'page_section': 'cabore',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'cabore.html'), 'r').read()
-  },
-  'cabore':{
-    'page_title': 'Caboré 2011 - Votação',
-    'page_section': 'cabore',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'cabore.html'), 'r').read()
-  },
-  'cabore':{
-    'page_title': 'Caboré 2011 - Votação',
-    'page_section': 'cabore',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'cabore.html'), 'r').read()
-  },
-  'cabore':{
-    'page_title': 'Caboré 2011 - Votação',
-    'page_section': 'cabore',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'cabore.html'), 'r').read()
-  },
-  'cabore':{
-    'page_title': 'Caboré 2011 - Votação',
-    'page_section': 'cabore',
-    'extra_classes': '',
-    'content': open(os.path.join(content_dir, 'cabore.html'), 'r').read()
-  },
-}
+def extract_meta(html):
+  pattern = re.compile('<!--\n*([^>]*?)\n*-->([^¥]*)')
+  matches = pattern.match(html)
+  meta = {}
+  if (matches):
+    for key_value in matches.group(1).split('\n'):
+      (key, value) = key_value.split(':')
+      meta[key] = value.strip()
+  return meta
 
-print page_arguments
-
-# for fname in os.listdir(content_dir):
-#   f = open(os.path.join(content_dir, fname), 'r')
-#   content = f.read()
-
+for fname in os.listdir(content_dir):
+  f = open(os.path.join(content_dir, fname), 'r')
+  content = unicode(f.read(), 'utf-8')
+  metadata = extract_meta(content)
+  filename_parts = fname.split('.')
+  print '\n\n\n----------'
+  if (len(filename_parts) == 2):
+    section_name = filename_parts[0]
+    data = {
+      'page_title': metadata['title'] if 'title' in metadata else 'Caboré 2011',
+      'extra_classes': metadata['extra_classes'] if 'extra_classes' in metadata else '',
+      'page_section': section_name,
+      'content': content
+    }
+    print 'sessao: {}\n----------'.format(section_name)
+    output = pystache.render(template, data)
+    # print output
+    index_file_path = os.path.join(output_dir, section_name if section_name != 'home' else '', 'index.html')
+    index_file = codecs.open(index_file_path, encoding='utf-8', mode='w+')
+    index_file.write(output)
+    ajax_file_path = os.path.join(output_dir, section_name, 'ajax.html')
+    ajax_file_path = codecs.open(ajax_file_path, encoding='utf-8', mode='w+')
+    ajax_file_path.write(content)
+  else:
+    pass
+    # print 'interna\n----------'
 
 # print pystache.render('Hi {{person}}!', {'person': 'Mom'})

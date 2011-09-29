@@ -6,14 +6,14 @@
 <!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <!--
+  <!-- {{! 
   Variaveis:
   
   page_title        - ex: "Caboré 2011 - Votação"
   page_section      - home|cabore|indicados|votacao|promocao|premiacao|festa
   extra_classes     - any extra css class to be applied at the main, for example: detail|categoria
-  content           - innerHTML of the #main div
-  -->
+  contentnt           - innerHTML of the #main div
+  }}-->
   <meta charset="utf-8">
   <!-- Manual DNS prefetch for other used domains, see: h5bp.com/d/head-Tips -->
   <link rel="dns-prefetch" href="//ajax.googleapis.com" />
@@ -53,20 +53,23 @@
       <div id="header-logo"><a href="/" id="header-logo-link">Prêmio Caboré 2011</a></div>
       <nav>
         <ul>
-          <li><a id="link-cabore"     href="/cabore">Caboré</a></li>
-          <li><a id="link-indicados"  href="/indicados">Indicados</a></li>
-          <li><a id="link-votacao"    href="/votacao">Votação</a></li>
-          <!-- <li><a id="link-promocao"   href="/promocao" class="vegas">Go to Vegas</a></li> -->
-          <li><a id="link-premiacao"  href="/premiacao">Premiação</a></li>
-          <li><a id="link-festa"      href="/festa">Festa</a></li>
+          <li><a id="link-cabore"     href="/cabore/">Caboré</a></li>
+          <li><a id="link-indicados"  href="/indicados/">Indicados</a></li>
+          <li><a id="link-votacao"    href="/votacao/">Votação</a></li>
+          <!-- <li><a id="link-promocao"   href="/promocao/" class="vegas">Go to Vegas</a></li> -->
+          <li><a id="link-premiacao"  href="/premiacao/">Premiação</a></li>
+          <li><a id="link-festa"      href="/festa/">Festa</a></li>
         </ul>
       </nav>
       <div id="ficha-0" class="ficha"></div>
       <div id="ficha-1" class="ficha"></div>
       <div id="ficha-2" class="ficha"></div>
+      <strong>&nbsp;</strong>
     </header>
     <div id="main">
-      {{content}}
+      <div id="page-content">
+{{{content}}}
+      </div>
     </div>
     <footer>
       <ul>
