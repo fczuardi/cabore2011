@@ -84,7 +84,6 @@ function desceFichasFallback(targetX){
 function desceFichas(name){
   var menuitem, item_width, item_left, targetX, espera=0;
   if ((!name)||(name == '{{page_section}}')){return false;}
-  $('#page-content').html('');
   body_element.removeClass('section-'+previous_selected_section);
   body_element.addClass('animacao');
   body_element.addClass('section-'+name);
@@ -149,7 +148,6 @@ function fichaTransitioned(event){
     }
   }
 }
-
 function updateMeta(){
   var html = $('#page-content').html();
   var pattern = /<!--([^<]*)-->/;
@@ -205,6 +203,7 @@ function loadContent(path){
 }
 function loadSection(name){
   console.log('LoadSection '+name);
+  $('#page-content').html('');
   $('#page-content').load('/content/'+name+'.html?v='+cache_version, function() {
     updateMeta();
     $('#page-content').fadeIn();
@@ -232,6 +231,7 @@ function loadCategoria(path){
   $('#page-content').fadeOut(500, function(){
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
+    $('#page-content').html('');
     $('#page-content').load(content_path+template_name+'.html', function() {
       updateMeta();
       if (template_name == 'lista'){
