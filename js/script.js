@@ -204,7 +204,7 @@ function loadContent(path){
 function loadSection(name){
   console.log('LoadSection '+name);
   $('#page-content').html('');
-  $('#page-content').load('/content/'+name+'.html?v='+cache_version, function() {
+  $('#page-content').load('/'+name+'/ajax.html?v='+cache_version, function() {
     updateMeta();
     $('#page-content').fadeIn();
     body_element.removeClass('detail');
