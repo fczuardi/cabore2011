@@ -31,3 +31,8 @@ Optimize Modernizr ?
   * tests and css classes we currently use:
     * csstransitions
     * csstransforms
+    
+Monitor folders (for the build system)
+
+  * https://github.com/jslatts/stalker
+    * http://fzysqr.com/2011/06/08/introducing-stalker-a-node-js-module-now-your-files-can-get-restraining-orders-against-you-too/
