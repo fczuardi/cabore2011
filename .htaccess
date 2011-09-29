@@ -1,16 +1,10 @@
-RewriteEngine On    # Turn on the rewriting engine
-
-#Como usar uma condicao para n rewrite rules -> http://httpd.apache.org/docs/current/rewrite/flags.html#flag_s
-RewriteCond %{QUERY_STRING} !^fmt=ajax$ [NC]
-RewriteRule .? - [S=3]
-  RewriteRule ^([^\/]*)/?$ /content/$1.html? [NC,L]
-  RewriteRule ^([^\/]*)\/([^\/]*)/?$ /content/$1/$2.html? [NC,L]
-  RewriteRule ^([^\/]*)\/([^\/]*)\/([^\/]*)/?$ /content/$1/$2/$3.html? [NC,L]
-# RewriteRule ^([^\/]*)\/([^\/]*)\/([^\/]*)\/([^\/]*)/?$ /content/$1/$2/$3/$4.html? [NC,L]
-
-RewriteRule ^(cabore)/?$ /build/cabore/index.html? [NC]
-
-# RewriteRule ^(.*)$ http://fabricio.org/%1/$1? [R]
-# RewriteRule ^photos/watermark\.php$ /photos/data/%1? [NC,L]
-
-# RewriteRule    ^([A-Za-z0-9-]+)/?\.ajax$    $1/ajax.html    [NC,L]    # Handle requests for "pet-care"
+# RewriteEngine On    # Turn on the rewriting engine
+# 
+# #Como usar uma condicao para n rewrite rules -> http://httpd.apache.org/docs/current/rewrite/flags.html#flag_s
+# RewriteCond %{QUERY_STRING} !^fmt=ajax$ [NC]
+# RewriteRule .? - [S=3]
+#   RewriteRule ^([^\/]*)/?$ /content/$1.html? [NC,L]
+#   RewriteRule ^([^\/]*)\/([^\/]*)/?$ /content/$1/$2.html? [NC,L]
+#   RewriteRule ^([^\/]*)\/([^\/]*)\/([^\/]*)/?$ /content/$1/$2/$3.html? [NC,L]
+# 
+# RewriteRule ^(cabore)/?$ /build/cabore/index.html? [NC]
