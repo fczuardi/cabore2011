@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-var cachebust = 'v6';
+var cachebust = 'v7';
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
@@ -175,6 +175,7 @@ function loadCategoria(path){
     $('#page-content').html('');
     $('#page-content').load(content_path+template_name+'.html'+'?cachebust='+cachebust, function() {
       body_element.data('page-name', item_descida);
+      $('#main nav.back a').bind('click',backClicked);
       if (template_name == 'lista'){
         $('#page-content .card .content a').bind('click',categoriaLinkClicked);
         body_element.addClass('categoria');
@@ -277,6 +278,15 @@ function updateDimensions(){
     window.scrollTo(0, 1);
   }
   $('#stage').css('height',new_stage_height);
+}
+function backClicked(event){
+  console.log('backClicked')
+  event.preventDefault();
+  if (body_element.hasClass('categoria')){
+    $('#page-content').fadeOut(500, function(){
+      loadSection('indicados');
+    });
+  }
 }
 function loaded(){
   var page_name = body_element.data('page-name');

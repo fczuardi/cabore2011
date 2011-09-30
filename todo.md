@@ -2,7 +2,7 @@
 
 1.  Bugs do IE6 e 7
 2.  Bug do iPhone (quando gira a tela, perde zoom e posição corretas) 
-3.  Botão Voltar sem hack.
+3.  OK - Botão Voltar sem hack.
 4.  Limpar outros eventuais hacks.  
 5.  Embed de vídeo para testar no iPhone, IE, etc
 6.  Ícones (favicon e webapps)
