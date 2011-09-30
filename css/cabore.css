@@ -87,8 +87,15 @@ h4{
   line-height: 21px;
   margin: 0px;
 }
+.section-festa .colunaDeTexto p {
+  margin-bottom:1em;
+}
 .colunaDeTexto.comSidebar{
   padding-left: 253px;
+}
+.colunaDeTexto a{
+  text-transform:none;
+  text-decoration:underline;
 }
 /************** LAYOUT ********************/
 #stage{
