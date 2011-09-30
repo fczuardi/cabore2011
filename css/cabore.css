@@ -76,7 +76,7 @@ h3{
 h4{
 	font-size:18px;
 	text-align: center;
-	padding-top: 85px;
+	padding-top: 90px;
 }
 .colunaDeTexto{
   padding: 48px;
@@ -355,7 +355,7 @@ html.lte8 .card .content{
   padding-top:130px;
   height:150px;
   font-size:19px;
-  color:#a38e71 !important;
+/*  color:#a38e71 !important;*/
   width:110px;  
 }
 .section-indicados.categoria .card.pessoa .sem-foto.nome-em-2-linhas a{
@@ -486,7 +486,7 @@ body.section-indicados.detail #carta-2{
   padding-right:0px;
 }
 .section-indicados #main ul.coluna2 {
-  background-color:#333;
+/*  background-color:#333;*/
 }
 .section-indicados #main ul.coluna2 li{
   height: 31px;
