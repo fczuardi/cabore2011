@@ -66,6 +66,7 @@ h2 {
 	margin-top: -30px;
 	width:100%;
 	position:absolute;
+	color:#ad9b3f;
 }
 h3{
   font-family: "FlamaSemicondensedSemibold";
@@ -458,8 +459,8 @@ body.section-indicados.detail #carta-2{
 /******* PAGE SPECIFIC STYLES *****/
 /*** INDICADOS ***/
 .section-indicados #main ul li:hover a{
-  font-family: "FlamaSemicondensedSemibold";
-  color: #fff;
+/*  font-family: "FlamaSemicondensedSemibold";*/
+  color: #ad9b3f;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -471,7 +472,7 @@ body.section-indicados.detail #carta-2{
   float: left;
 }
 .section-indicados #main ul li{
-  height: 38px;
+  height: 33px;
 }
 .section-indicados #main ul li.last{
   height: 15px;
@@ -484,8 +485,14 @@ body.section-indicados.detail #carta-2{
   padding-left: 120px;
   padding-right:0px;
 }
+.section-indicados #main ul.coluna2 {
+  background-color:#333;
+}
 .section-indicados #main ul.coluna2 li{
-  height: 34px;
+  height: 31px;
+}
+.section-indicados #main ul.coluna2 li.duasLinhas{
+  height: 49px;
 }
 
 /** INDICADOS DETALHES **/
