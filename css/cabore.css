@@ -362,6 +362,10 @@ html.lte8 .card .content{
 .section-indicados.categoria .card.pessoa .sem-foto.nome-em-2-linhas a{
   padding-top:120px;
 }
+.section-indicados.categoria .card.pessoa .sem-foto.nome-grande a{
+  font-size:14px;
+	padding-top:124px;
+}
 .section-home #carta-1{
   left:150px;
   top:52px;
