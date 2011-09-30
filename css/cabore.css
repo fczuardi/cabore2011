@@ -46,6 +46,14 @@ body a:hover,
 body a:visited {
 	color: #fff;
 }
+a:active{
+outline: none !important;
+-moz-outline-style: none !important;
+}
+a:focus{
+  outline: none !important;
+  -moz-outline-style: none !important;
+}
 body strong {
   font-family: "FlamaSemicondensedSemibold";
   text-decoration: none;
