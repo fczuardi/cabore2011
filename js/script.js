@@ -80,13 +80,15 @@ function desceFichasFallback(targetX){
   }
 }
 function desceFichas(name){
+  console.log('desceFichas');
   var menuitem, item_width, item_left, targetX, espera=0;
   if ((!name)||(name == '{{page_section}}')){return false;}
-  $('#page-content').html('');
   body_element.removeClass('section-'+previous_selected_section);
   body_element.addClass('animacao');
   body_element.addClass('section-'+name);
-  loadSection(name);
+  if (body_element.data('page-name') != item_descida){
+    loadSection(name);
+  }
   previous_selected_section = name;
   
   menuitem = $('#link-'+name);
@@ -141,12 +143,17 @@ function fichaTransitioned(event){
   }
 }
 function loadSection(name){
+  $('#page-content').html('');
   $('#page-content').load('/content/'+name+'.html', function() {
     $('#page-content').fadeIn();
+    body_element.data('page-name', item_descida);
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
     if (body_element.hasClass('section-indicados')){
       $('#page-content ul a').bind('click',categoriaLinkClicked);
+    }
+    if (body_element.hasClass('section-home')){
+      entraCartas();
     }
   });
 }
@@ -163,7 +170,9 @@ function loadCategoria(path){
   $('#page-content').fadeOut(500, function(){
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
+    $('#page-content').html('');
     $('#page-content').load(content_path+template_name+'.html', function() {
+      body_element.data('page-name', item_descida);
       if (template_name == 'lista'){
         $('#page-content .card .content a').bind('click',categoriaLinkClicked);
         body_element.addClass('categoria');
@@ -277,12 +286,14 @@ function loaded(){
   }
   if (page_name == 'home'){
     entraCartas();
-  } else {
+  }
+   // else {
+  if(true) {
     item_descida = page_name;
-    $('#page-content').fadeOut();
+    // $('#page-content').fadeOut();
     $('#link-'+page_name).addClass('selected');
-    setTimeout(sobeFichas, 1000);
-    // desceFichas(page_name);
+    // setTimeout(sobeFichas, 1000);
+    desceFichas(page_name);
   }
   if (body_element.hasClass('section-home')){
     $('#carta-2 a').bind('click',menuitemClicked);
