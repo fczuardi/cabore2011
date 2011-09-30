@@ -136,6 +136,9 @@ header{
   webkit-border-radius:12px;
   position:relative;
 }
+.section-indicados #main{
+  min-height:325px;
+}
 html.ie6 #main{
   height:311px;
 }
@@ -193,15 +196,15 @@ html.notie #link-promocao:after {
 }
 #main nav.back{
 	position: absolute;
-  bottom:-43px;
+  bottom:15px;
   left:610px;
   z-index:10;
 }
 #main nav.back a{
-  opacity: 0.5;
+/*  opacity: 0.5;*/
 }
 #main nav.back a:hover{
-	opacity: 1;
+/*  opacity: 1;*/
 }
 
 /************** FICHAS ********************/
@@ -485,27 +488,27 @@ body.section-indicados.detail #carta-2{
   float: left;
 }
 .section-indicados #main ul li{
-  height: 33px;
+  height: 36px;
 }
 .section-indicados #main ul li.last{
   height: 15px;
 }
 .section-indicados #main ul li.duasLinhas{
-  height: 52px;
+  height: 54px;
 }
 .section-indicados #main ul.coluna1{
   width: 240px;
-  padding-left: 120px;
+  padding-left: 118px;
   padding-right:0px;
 }
 .section-indicados #main ul.coluna2 {
 /*  background-color:#333;*/
 }
 .section-indicados #main ul.coluna2 li{
-  height: 31px;
+  height: 33px;
 }
 .section-indicados #main ul.coluna2 li.duasLinhas{
-  height: 49px;
+  height: 51px;
 }
 
 /** INDICADOS DETALHES **/
@@ -528,12 +531,6 @@ body.section-promocao.loaded{
 /************ FOOTER *************/
 footer{
   position: relative;
-}
-.section-indicados.categoria footer{
-  padding-top:40px;
-}
-.section-indicados.detail footer{
-  padding-top:40px;
 }
 footer ul{
   list-style:none;
