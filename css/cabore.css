@@ -297,7 +297,7 @@ easeInOutCirc:  '0.785, 0.135, 0.150, 0.860'
   top:27px;
   left:38px;
   background-repeat:no-repeat;
-  background-position:0px 45px;
+  background-position:0px 46px;
 }
 .card .content.no-link{
   background-position:0px 0px;
@@ -507,14 +507,15 @@ footer ul{
   position: relative;
   margin: 0px;
   padding: 0px;
-  padding-left: 110px;
-  padding-top: 91px;
+  padding-left: 34px;
+  padding-top: 20px;
 }
 footer li{
   display:block;
   float:left;
   overflow:hidden;
   background-repeat:no-repeat;
+  height:27px;
 }
 footer li a{
   display: block;
@@ -525,31 +526,31 @@ footer li a{
 }
 #patrocinio-1{
   background-image:url(../img/patrocinadores/patrocinadores_01.png);
-  width:51px;
+  width:60px;
 }
 #patrocinio-2{
   background-image:url(../img/patrocinadores/patrocinadores_02.png);
-  width:115px;
+  width:144px;
 }
 #patrocinio-3{
   background-image:url(../img/patrocinadores/patrocinadores_03.png);
-  width:62px;
+  width:91px;
 }
 #patrocinio-4{
   background-image:url(../img/patrocinadores/patrocinadores_04.png);
-  width:88px;
+  width:112px;
 }
 #patrocinio-5{
   background-image:url(../img/patrocinadores/patrocinadores_05.png);
-  width:77px;
+  width:100px;
 }
 #patrocinio-6{
   background-image:url(../img/patrocinadores/patrocinadores_06.png);
-  width:108px;
+  width:141px;
 }
 #patrocinio-7{
   background-image:url(../img/patrocinadores/patrocinadores_07.png);
-  width:46px;
+  width:52px;
 }
 /*Sombra na mesa (divs inseridos via javascript variavel sombra_bg)*/
 #sombra-top, 
