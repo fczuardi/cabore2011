@@ -185,8 +185,9 @@ html.notie #link-promocao:after {
 }
 #main nav.back{
 	position: absolute;
-  top:-30px;
+  bottom:-43px;
   left:610px;
+  z-index:10;
 }
 #main nav.back a{
   opacity: 0.5;
@@ -338,7 +339,7 @@ html.lte8 .card .content{
 .section-cabore .card .content {
   background-image:url(../img/carta-img-trofeu.png);
 }
-.card.pessoa a{
+.card.pessoa .nome{
     font-family: "FlamaSemicondensedSemibold";
     color: #784a00 !important; /*IE6*/
     text-decoration: none;
@@ -349,7 +350,7 @@ html.lte8 .card .content{
     text-align: center;
     height:50px;
 }
-.section-indicados.categoria .card.pessoa .sem-foto a{
+.section-indicados.categoria .card.pessoa .sem-foto .nome{
   padding-left:33px;
   padding-right:33px;
   padding-top:130px;
@@ -515,6 +516,12 @@ body.section-promocao.loaded{
 /************ FOOTER *************/
 footer{
   position: relative;
+}
+.section-indicados.categoria footer{
+  padding-top:40px;
+}
+.section-indicados.detail footer{
+  padding-top:40px;
 }
 footer ul{
   list-style:none;

@@ -1,6 +1,7 @@
 /* Author: 
 
 */
+var cachebust = 'v5';
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
@@ -144,7 +145,7 @@ function fichaTransitioned(event){
 }
 function loadSection(name){
   $('#page-content').html('');
-  $('#page-content').load('/content/'+name+'.html', function() {
+  $('#page-content').load('/content/'+name+'.html'+'?cachebust='+cachebust, function() {
     $('#page-content').fadeIn();
     body_element.data('page-name', item_descida);
     body_element.removeClass('detail');
@@ -154,6 +155,7 @@ function loadSection(name){
     }
     if (body_element.hasClass('section-home')){
       entraCartas();
+      $('#carta-2 a').bind('click',menuitemClicked);
     }
   });
 }
@@ -171,7 +173,7 @@ function loadCategoria(path){
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
     $('#page-content').html('');
-    $('#page-content').load(content_path+template_name+'.html', function() {
+    $('#page-content').load(content_path+template_name+'.html'+'?cachebust='+cachebust, function() {
       body_element.data('page-name', item_descida);
       if (template_name == 'lista'){
         $('#page-content .card .content a').bind('click',categoriaLinkClicked);
