@@ -171,6 +171,7 @@ function loadContent(path){
   var pattern = /([^\/]+)/ig;
   var path_parts = path.match(pattern);
   var page_name;
+  console.log(path_parts)
   if (path_parts == null){
     section_descida = 'home';
     sobeFichas();
@@ -180,7 +181,6 @@ function loadContent(path){
     $('#link-'+page_name).addClass('selected');
     if (path_parts.length == 1){
       //section
-      $('#page-content').fadeOut();
       if (path_parts[0] != previous_selected_section){
         sobeFichas();
       } else {
@@ -204,19 +204,21 @@ function loadContent(path){
 function loadSection(name){
   console.log('LoadSection '+name);
   $('#page-content').html('');
-  $('#page-content').load('/'+name+'/ajax.html?v='+cache_version, function() {
-    updateMeta();
-    $('#page-content').fadeIn();
-    body_element.removeClass('detail');
-    body_element.removeClass('categoria');
-    if (body_element.hasClass('section-home')){
-      console.log('hey');
-      entraCartas();
-    }
-    if (body_element.hasClass('section-indicados')){
-      $('#page-content ul a').bind('click',categoriaLinkClicked);
-    }
-  });
+  $('#page-content').load('/'+name+'/ajax.html?v='+cache_version, sectionLoaded);
+}
+function sectionLoaded(){
+  console.log('sectionLoaded')
+  updateMeta();
+  $('#page-content').fadeIn();
+  body_element.removeClass('detail');
+  body_element.removeClass('categoria');
+  if (body_element.hasClass('section-home')){
+    console.log('hey');
+    entraCartas();
+  }
+  if (body_element.hasClass('section-indicados')){
+    $('#page-content ul a').bind('click',categoriaLinkClicked);
+  }
 }
 function loadCategoria(path){
   var content_path = path.replace('indicados', 'content');
@@ -270,9 +272,6 @@ function menuitemClicked(event){
     }
   }
   loadContent(item_nome)
-  // section_descida = item_nome;
-  // setTimeout(sobeFichas, espera);
-  item.addClass('selected');
 }
 function addListeners(){
   for (var i=0; i<fichas_elements.length; i++){
@@ -345,7 +344,10 @@ function updateDimensions(){
   }
   $('#stage').css('height',new_stage_height);
 }
+
+//first load
 function loaded(){
+  console.log('loaded')
   var page_name = body_element.data('page-name');
   previous_selected_section = page_name;
   body_element.addClass('loaded');
@@ -353,13 +355,15 @@ function loaded(){
   if (html_element.hasClass('ie6')){
     DD_belatedPNG.fix('#stage, #header-logo, .ficha, .card.basica, .card.back, #patrocinio-1, #patrocinio-2, #patrocinio-3, #patrocinio-4, #patrocinio-5, #patrocinio-6, #patrocinio-7');
   }
+  console.log('page_name ' + page_name)
   if (page_name == 'home'){
     entraCartas();
   } else {
     section_descida = page_name;
-    $('#page-content').fadeOut();
-    $('#link-'+page_name).addClass('selected');
-    setTimeout(sobeFichas, 1000);
+    loadContent(page_name)
+    // $('#page-content').css('opacity', 0)
+    // $('#page-content').css('display', 'none')
+    // sectionLoaded();
   }
   if (body_element.hasClass('section-home')){
     $('#carta-2 a').bind('click',menuitemClicked);
