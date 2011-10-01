@@ -342,7 +342,7 @@ html.lte8 .card .content{
 /*  background-image:url(../img/carta-ref-candidato-sem-foto.png);*/
 }
 .section-indicados .card .content.sem-foto{
-	background-position: 0px 35px;
+/*  background-position: 0px 35px;*/
 }
 .section-home .card .content{
   background-image:url(../img/carta-img-home.png);
