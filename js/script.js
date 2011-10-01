@@ -312,15 +312,18 @@ function loaded(){
   }
 }
 function changeViewport(){
-  var metas = document.getElementsByTagName('meta');
-  var i;
-  for (i=0; i < metas.length; i++){
-    if (metas[i].name == "viewport") {
+  if (is_iPhone || is_iPad) {
+    var viewportmeta = document.querySelector('meta[name="viewport"]');
+    if (viewportmeta) {
       if (is_iPhone){
-        metas[i].content = "width=device-width; initial-scale=0.4;";
-      }else if (is_iPad){
-        metas[i].content = "width=device-width,initial-scale=1,maximum-scale=1";
+        viewportmeta.content = "width=device-width; initial-scale=0.4, maximum-scale=0.4";
+      } else if (is_iPad){
+        viewportmeta.content = "width=device-width,initial-scale=1,maximum-scale=1";
       }
+      //give back to the user the ability to pinch zoom
+      document.body.addEventListener('gesturestart', function() {
+        viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+      }, false);
     }
   }
 }
@@ -338,7 +341,9 @@ function init(){
   changeViewport();
   tweakContentForIE();
   addShadow();
-  $(window).resize(updateDimensions);
+  if (!is_iPhone){
+    $(window).resize(updateDimensions);
+  }
   $(window).load(loaded);
   updateDimensions();
 }
