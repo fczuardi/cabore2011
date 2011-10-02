@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-var cachebust = 'v8';
+var cachebust = 'v11';
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
@@ -188,9 +188,10 @@ function loadCategoria(path){
   });
 }
 function categoriaLinkClicked(event){
-  console.log('categoriaLinkClicked !');
   event.preventDefault();
-  loadCategoria($(this).attr('href'));
+  if ($(this).attr('href').length > 2){
+    loadCategoria($(this).attr('href'));
+  }
 }
 function menuitemClicked(event){
   console.log('menuitemClicked');
@@ -291,7 +292,7 @@ function backClicked(event){
 function loaded(){
   var page_name = body_element.data('page-name');
   previous_selected_section = page_name;
-  body_element.addClass('loaded');
+  $('#stage').addClass('loaded');
   $('#stage').css('visibility','visible');
   if (html_element.hasClass('ie6')){
     DD_belatedPNG.fix('#stage, #header-logo, .ficha, .card.basica, .card.back, #patrocinio-1, #patrocinio-2, #patrocinio-3, #patrocinio-4, #patrocinio-5, #patrocinio-6, #patrocinio-7');

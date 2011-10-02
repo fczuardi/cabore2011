@@ -23,7 +23,6 @@
 body{
   font-family: "FlamaSemicondensedBasic", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:15px;
-  background-color:#2a543d; /*vinho 6c2b2c*/
   width:100%;
 }
 body.animacao{
@@ -33,8 +32,11 @@ body.animacao{
   -ms-transition:     background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
   transition:         background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
 }
-body.loaded{
-    background-color:#4e9b70; /*vinho c85051*/  
+body #stage {
+  background-color:#2a543d;
+}
+body #stage.loaded{
+    background-color:#4e9b70;
 }
 body a {
 	color: #fff;
@@ -86,12 +88,14 @@ h4{
 	text-align: center;
 	padding-top: 90px;
 }
-.colunaDeTexto{
+.colunaDeTexto,
+.colunaDeTexto-comSidebar{
   padding: 48px;
   color: #fff;
   margin:0px;
 }
-.colunaDeTexto p {
+.colunaDeTexto p,
+.colunaDeTexto-comSidebar p{
   font-size: 15px;
   line-height: 21px;
   margin: 0px;
@@ -99,7 +103,7 @@ h4{
 .section-festa .colunaDeTexto p {
   margin-bottom:1em;
 }
-.colunaDeTexto.comSidebar{
+.colunaDeTexto-comSidebar{
   padding-left: 253px;
 }
 .colunaDeTexto a{
@@ -290,6 +294,7 @@ easeInOutCirc:  '0.785, 0.135, 0.150, 0.860'
 /************ CARDS **************/
 
 .card{
+  background-image:url(../img/carta-basica.png);
   width:186px;
   height:254px;
   position:absolute;
@@ -303,12 +308,6 @@ easeInOutCirc:  '0.785, 0.135, 0.150, 0.860'
   margin-left: -32px;
   margin-top: -46px;
   outline: none;
-}
-.card.back{
-  background-image:url(../img/carta-verso.png);
-}
-.card.basica{
-  background-image:url(../img/carta-basica.png);
 }
 .card .content{
   width:112px;
@@ -378,6 +377,7 @@ html.lte8 .card .content{
 	padding-top:124px;
 }
 .section-home #carta-1{
+  background-image:url(../img/carta-verso.png);
   left:150px;
   top:52px;
   opacity:0.0;
@@ -388,6 +388,7 @@ html.lte8 .card .content{
   transform:rotate(-5deg);
 }
 .section-home #carta-0{
+  background-image:url(../img/carta-verso.png);
   left:372px;
   top:52px;
   opacity:0.0;
@@ -522,10 +523,10 @@ body.section-indicados.detail #sidebar{
 }
 
 /** PROMOCAO **/
-body.section-promocao{
+body.section-promocao #stage{
   background-color:#6c2b2c;
 }
-body.section-promocao.loaded{
+body.section-promocao #stage.loaded{
   background-color:#c85051;
 }
 /************ FOOTER *************/
