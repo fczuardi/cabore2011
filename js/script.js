@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-var cachebust = 'v11';
+var cachebust = 'v13';
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
@@ -81,7 +81,7 @@ function desceFichasFallback(targetX){
   }
 }
 function desceFichas(name){
-  console.log('desceFichas');
+  // console.log('desceFichas');
   var menuitem, item_width, item_left, targetX, espera=0;
   if ((!name)||(name == '{{page_section}}')){return false;}
   body_element.removeClass('section-'+previous_selected_section);
@@ -189,12 +189,14 @@ function loadCategoria(path){
 }
 function categoriaLinkClicked(event){
   event.preventDefault();
-  if ($(this).attr('href').length > 2){
-    loadCategoria($(this).attr('href'));
+  if (typeof $(this).attr('href') != 'undefined') {
+    if ($(this).attr('href').length > 2 ){
+      loadCategoria($(this).attr('href'));
+    }
   }
 }
 function menuitemClicked(event){
-  console.log('menuitemClicked');
+  // console.log('menuitemClicked');
   var   link = $(this)
       , item_nome = link.attr('href').substring(1)
       , item = $('#link-'+item_nome)
@@ -281,7 +283,7 @@ function updateDimensions(){
   $('#stage').css('height',new_stage_height);
 }
 function backClicked(event){
-  console.log('backClicked')
+  // console.log('backClicked')
   event.preventDefault();
   if (body_element.hasClass('categoria')){
     $('#page-content').fadeOut(500, function(){
