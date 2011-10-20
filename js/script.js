@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-var cachebust = 'v14';
+var cachebust = 'v15';
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
@@ -15,7 +15,8 @@ var html_element,
     cartaCount,
     item_descida = null,
     previous_selected_section,
-    template_name;
+    template_name,
+    current_category = '';
 
 function addBrowserClasses(){
   if ($.browser.msie){
@@ -150,6 +151,8 @@ function loadSection(name){
     body_element.data('page-name', item_descida);
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
+    current_category = '';
+    
     if (body_element.hasClass('section-indicados')){
       $('#page-content ul a').bind('click',categoriaLinkClicked);
     }
@@ -163,17 +166,18 @@ function loadCategoria(path){
   var content_path = path.replace('indicados', 'content');
   var path_parts = content_path.split('/');
   if (path_parts.length == 6){
-    path_parts.splice(4,1);
     content_path = path_parts.join('/');
     template_name = 'detalhes';
   }else{
     template_name = 'lista';
   }
+  current_category = '';
   $('#page-content').fadeOut(500, function(){
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
     $('#page-content').html('');
     $('#page-content').load(content_path+template_name+'.html'+'?cachebust='+cachebust, function() {
+      current_category = path_parts[3];
       body_element.data('page-name', item_descida);
       $('#main nav.back a').bind('click',backClicked);
       if (template_name == 'lista'){
@@ -181,7 +185,7 @@ function loadCategoria(path){
         body_element.addClass('categoria');
       }else{
         body_element.addClass('detail');
-        cardAnimationInit();
+        cardAnimationInit(); //função definida em card-switch-animation.js
       }
       $('#page-content').fadeIn();
     });
@@ -194,6 +198,18 @@ function categoriaLinkClicked(event){
       loadCategoria($(this).attr('href'));
     }
   }
+}
+function loadIndicado(path){
+  var content_path = path.replace('indicados', 'content');
+  var path_parts = content_path.split('/');
+  var content_div = $('#candidate-content-container');
+  content_div.fadeOut(500, function(){
+    $(this).html('');
+    $(this).load(content_path+'detalhes.html'+'?cachebust='+cachebust+' #candidate-content', function() {
+      $('#main nav.back a').bind('click',backClicked);
+      $('#candidate-content-container').fadeIn();
+    });
+  })
 }
 function menuitemClicked(event){
   // console.log('menuitemClicked');
@@ -286,8 +302,12 @@ function backClicked(event){
   // console.log('backClicked')
   event.preventDefault();
   if (body_element.hasClass('categoria')){
-    $('#page-content').fadeOut(500, function(){
-      loadSection('indicados');
+      $('#page-content').fadeOut(500, function(){
+        loadSection('indicados');
+      });
+  } else {
+    $('#page-content').fadeOut(500, function(){ 
+      loadCategoria('/indicados/categoria/'+current_category+'/'); 
     });
   }
 }

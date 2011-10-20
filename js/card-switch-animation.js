@@ -2,7 +2,6 @@ card_visual_order = [0, 1, 2]; //de baixo para cima
 card_css_top_values_for_slot = [154, 102, 50]; //valores para o top em cada um dos slots imaginários
 
 function cardAnimationInit(){	
-  console.log('INIT CARD ANIM')
 	//aplica onClick nas cartas
 	$('#carta-0 a').click(function(event){
     event.preventDefault();  
@@ -25,6 +24,9 @@ function picTouchStart(event){
 }
 
 function changeCardOrder(id){
+  //carrega o conteudo do detalhes.html daquele indicado
+  loadIndicado($('#carta-'+id+' a').attr('href'));  //função definida em script.js
+  
 	//descobre o index do card em questão no array de ordem das cartas
 	var index = $.inArray(id, card_visual_order);
 

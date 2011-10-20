@@ -361,6 +361,7 @@ html.lte8 .card .content{
     height:50px;
 }
 .section-indicados.categoria .card.pessoa .sem-foto .nome{
+  line-height: 19px;
   padding-left:33px;
   padding-right:33px;
   padding-top:130px;
@@ -375,6 +376,13 @@ html.lte8 .card .content{
 .section-indicados.categoria .card.pessoa .sem-foto.nome-grande a{
   font-size:14px;
 	padding-top:124px;
+}
+body.detail .card.pessoa .nome{
+  font-size: 12px;
+}
+.detail .card.pessoa .nome-em-2-linhas .nome{
+    line-height: 11px;
+    padding-top: 216px;
 }
 .section-home #carta-1{
   background-image:url(../img/carta-verso.png);
