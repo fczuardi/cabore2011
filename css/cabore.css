@@ -32,6 +32,13 @@ body.animacao{
   -ms-transition:     background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
   transition:         background-color  0.7s cubic-bezier(0.165, 0.840, 0.440, 1.00);
 }
+#main{
+  -moz-transition:    height  0.3s;
+  -webkit-transition: height  0.3s;
+  -o-transition:      height  0.3s;
+  -ms-transition:     height  0.3s;
+  transition:         height  0.3s;
+}
 body #stage {
   background-color:#2a543d;
 }

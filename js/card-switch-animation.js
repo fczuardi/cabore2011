@@ -44,7 +44,7 @@ function changeCardOrder(id){
 		updateCardPositionAnimated(750);		
 	} else {
 		//
-		console.log("não preciso trabalhar, senhor");
+    // console.log("não preciso trabalhar, senhor");
 	}
 }
 

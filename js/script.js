@@ -144,6 +144,17 @@ function fichaTransitioned(event){
     }
   }
 }
+function updateOutlineHeight(){
+  setTimeout(function(){
+    if($('#candidate-content-container').length > 0){
+      $('#main').height($('#candidate-content-container').innerHeight());
+    } else {
+      $('#main').attr('style','');
+      $('#main').height($('#main').height());
+    }
+  }, 10);
+}
+
 function loadSection(name){
   $('#page-content').html('');
   $('#page-content').load('/content/'+name+'.html'+'?cachebust='+cachebust, function() {
@@ -152,7 +163,7 @@ function loadSection(name){
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
     current_category = '';
-    
+    updateOutlineHeight();
     if (body_element.hasClass('section-indicados')){
       $('#page-content ul a').bind('click',categoriaLinkClicked);
     }
@@ -187,7 +198,8 @@ function loadCategoria(path){
         body_element.addClass('detail');
         cardAnimationInit(); //função definida em card-switch-animation.js
       }
-      $('#page-content').fadeIn();
+      updateOutlineHeight();
+      $('#page-content').fadeIn(500);
     });
   });
 }
@@ -206,8 +218,8 @@ function loadIndicado(path){
   content_div.fadeOut(500, function(){
     $(this).html('');
     $(this).load(content_path+'detalhes.html'+'?cachebust='+cachebust+' #candidate-content', function() {
-      $('#main nav.back a').bind('click',backClicked);
-      $('#candidate-content-container').fadeIn();
+      updateOutlineHeight();
+      $('#candidate-content-container').delay(500).fadeIn(1000);
     });
   })
 }
