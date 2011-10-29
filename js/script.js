@@ -150,7 +150,7 @@ function updateOutlineHeight(){
       $('#main').height($('#candidate-content-container').innerHeight());
     } else {
       $('#main').attr('style','');
-      $('#main').height($('#main').height());
+      // $('#main').height($('#main').height());
     }
   }, 10);
 }
