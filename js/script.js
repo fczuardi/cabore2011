@@ -344,7 +344,7 @@ function loaded(){
     desceFichas(page_name);
   }
   if (body_element.hasClass('section-home')){
-    $('#carta-2 a').bind('click',menuitemClicked);
+    // $('#carta-2 a').bind('click',menuitemClicked);
   }
 }
 function changeViewport(){
