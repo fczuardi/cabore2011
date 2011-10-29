@@ -475,16 +475,198 @@ body.section-indicados.detail #carta-2{
 
 
 /* ---- CANDIDATOS ---- */
-.card .JairoLeal {
-  background-image:url(../photos/jairo-leal.jpg);
+/* ---- CANDIDATOS Empresário ou Dirigente ---- */
+
+.card .edu {
+  background-image:url(../photos/carta-EDUARDO-FISCHER.png);
 }
 
-.card .LuizLara {
-  background-image:url(../photos/luis-lara.jpg);
+.card .orlando {
+  background-image:url(../photos/carta-ORLANDO-MARQUES.png);
 }
 
-.card .NizanGuanaes {
-  background-image:url(../photos/nizan-guanaes.jpg);
+.card .paulo {
+  background-image:url(../photos/paulo.png);
+}
+
+/* ---- CANDIDATOS AGENCIA DE COMUNICACAO ---- */
+
+.card .loducca {
+  background-image:url(../photos/loducca.png);
+}
+
+.card .mood {
+  background-image:url(../photos/mood.png);
+}
+
+.card .mccann {
+  background-image:url(../photos/wcam.png);
+
+}
+
+/* ---- CANDIDATOS PROFISSIONAL DE CRIAÇÃO ---- */
+
+.card .AlvaroRodrigues {
+  background-image:url(../photos/carta-ALVARO-RODRIGUES.png);
+}
+
+.card .AnselmoRamos {
+  background-image:url(../photos/carta-ANSELMO-RAMOS.png);
+}
+
+.card .LuizSanches {
+  background-image:url(../photos/carta-LUIZ-SANCHES.png);
+
+}
+
+/* ---- CANDIDATOS PROFISSIONAL DE ATENDIMENTO ---- */
+
+.card .AnaMariaNubie {
+  background-image:url(../photos/carta-ana-nubie.png);
+}
+
+.card .MarceloPasso {
+  background-image:url(../photos/carta-MARCELO-PASSOS.png);
+}
+
+.card .MarceloPenna {
+  background-image:url(../photos/carta-MARCELLO-PENA.png);
+
+}
+
+/* ---- CANDIDATOS PROFISSIONAL DE PLANEJAMENTO ---- */
+
+.card .EduardoLorenzi {
+  background-image:url(../photos/carta-EDUARDO-LORENZI.png);
+}
+
+.card .FernadoDiniz {
+  background-image:url(../photos/carta-FERNANDO-DINIZ.png);
+}
+
+.card .PedroCruz {
+  background-image:url(../photos/carta-PEDRO-CRUZ-copy.png);
+
+}
+
+/* ---- CANDIDATOS MIDIA ELETRONICA  ---- */
+
+.card .globo-news {
+  background-image:url(../photos/globo-news.png);
+}
+
+.card .google {
+  background-image:url(../photos/google.png);
+}
+
+.card .terra {
+  background-image:url(../photos/terra.png);
+
+}
+
+/* ---- CANDIDATOS MIDIA IMPRESSA ---- */
+
+.card .metro {
+  background-image:url(../photos/metro.png);
+}
+
+.card .piaui {
+  background-image:url(../photos/piaui.png);
+}
+
+.card .valor-eco {
+  background-image:url(../photos/valor.png);
+
+}
+
+/* ---- CANDIDATOS PROFISSIONAL DE MIDIA ---- */
+
+.card .GustavoGaion {
+  background-image:url(../photos/carta-GUSTAVO-GAION.png);
+}
+
+.card .IgorPuga {
+  background-image:url(../photos/carta-IGOR-PUGA.png);
+}
+
+.card .PatriciaMuratori {
+  background-image:url(../photos/carta-PATRICIA-MURATORI.png);
+
+}
+
+/* ---- CANDIDATOS proficional veiculo ---- */
+
+.card .AlexandreCaldini {
+  background-image:url(../photos/carta-alexandre-caldini.png);
+}
+
+.card .EnorPaiano {
+  background-image:url(../photos/carta-ENOR-PAIANO.png);
+}
+
+.card .MarceloCataldi {
+  background-image:url(../photos/carta-MARCELO-CATALDI.png);
+
+}
+
+/* ---- CANDIDATOS anunciante ---- */
+
+.card .BradescoSeguros {
+  background-image:url(../photos/bradesco.png);
+}
+
+.card .Nextel {
+  background-image:url(../photos/nextel.png);
+}
+
+.card .Nissan {
+  background-image:url(../photos/nissan.png);
+
+}
+
+/* ---- CANDIDATOS PROFISSIONAL DE MARKETING ---- */
+
+.card .CarlaSchmitzberger {
+  background-image:url(../photos/carta-carla-schimtzerberger.png);
+}
+
+.card .MariaLuizaLopez {
+  background-image:url(../photos/carta-MARIA-LUISA-ASKAR-LOPEZ.png);
+}
+
+.card .RomeoDeonBusarello {
+  background-image:url(../photos/carta-ROMEO-BUSARELLO.png);
+
+}
+
+/* ---- CANDIDATOS SERVIÇO ESPECIALIZADO ---- */
+
+.card .Aktuel {
+  background-image:url(../photos/aktuel.png);
+}
+
+.card .Pontomobi {
+  background-image:url(../photos/mobi.png);
+}
+
+.card .Tudo {
+  background-image:url(../photos/tudo.png);
+
+}
+
+/* ---- CANDIDATOS PRODUCAO PUBLICITARIA ---- */
+
+.card .AdStudio {
+  background-image:url(../photos/adsutdio.png);
+}
+
+.card .FulanoFilmes {
+  background-image:url(../photos/flimes.png);
+}
+
+.card .Paranoidbr {
+  background-image:url(../photos/paranoid.png);
+
 }
 
 
