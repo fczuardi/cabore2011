@@ -351,7 +351,8 @@ html.lte8 .card .content{
 /*  background-position: 0px 35px;*/
 }
 .section-home .card .content{
-  background-image:url(../img/carta-img-home.png);
+/*  background-image:url(../img/carta-img-home.png);*/
+  background-image:url(../img/carta-img-vote-aqui.png);
 }
 .section-cabore .card .content {
   background-image:url(../img/carta-img-trofeu.png);
