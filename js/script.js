@@ -229,6 +229,7 @@ function menuitemClicked(event){
       , item_nome = link.attr('href').substring(1)
       , item = $('#link-'+item_nome)
       , espera = 0;
+  if (link.attr('id') == 'link-votacao') { return true; }
   event.preventDefault();
   if (item.hasClass('selected')){ return false; }
   if(navigation_elements.hasClass('selected')){
