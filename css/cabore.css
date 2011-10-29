@@ -387,6 +387,10 @@ html.lte8 .card .content{
 body.detail .card.pessoa .nome{
   font-size: 12px;
 }
+.categoria .pessoa .nome-em-2-linhas .nome{
+    line-height: 14px;
+    padding-top: 212px;
+}
 .detail .card.pessoa .nome-em-2-linhas .nome{
     line-height: 11px;
     padding-top: 216px;
