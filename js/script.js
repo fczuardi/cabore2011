@@ -156,10 +156,27 @@ function updateOutlineHeight(){
   }, 10);
 }
 
+function IeHrefFix(){
+  $('a').each(function(){
+    var href = $(this).attr('href');
+    var end_of_domain_name_local = href.lastIndexOf(':8888');
+    var end_of_domain_name_test = href.lastIndexOf('saocarlos.wiki.br');
+    var end_of_domain_name_production = href.lastIndexOf('cabore.com.br');
+    if (end_of_domain_name_local != -1){
+      href = href.substring(end_of_domain_name_local+':8888'.length);
+    } else if (end_of_domain_name_test != -1){
+      href = href.substring(end_of_domain_name_test+'saocarlos.wiki.br'.length);
+    } else if (end_of_domain_name_production != -1){
+      href = href.substring(end_of_domain_name_production+'cabore.com.br'.length);
+    }
+    $(this).attr('_href', href);
+  });
+}
 function loadSection(name){
   $('#page-content').html('');
   $('#page-content').load('/content/'+name+'.html'+'?cachebust='+cachebust, function() {
     $('#page-content').fadeIn();
+    IeHrefFix();
     body_element.data('page-name', item_descida);
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
@@ -177,6 +194,7 @@ function loadSection(name){
 function loadCategoria(path){
   var content_path = path.replace('indicados', 'content');
   var path_parts = content_path.split('/');
+
   if (path_parts.length == 6){
     content_path = path_parts.join('/');
     template_name = 'detalhes';
@@ -189,6 +207,7 @@ function loadCategoria(path){
     body_element.removeClass('categoria');
     $('#page-content').html('');
     $('#page-content').load(content_path+template_name+'.html'+'?cachebust='+cachebust, function() {
+      IeHrefFix();
       current_category = path_parts[3];
       body_element.data('page-name', item_descida);
       $('#main nav.back a').bind('click',backClicked);
@@ -208,7 +227,7 @@ function categoriaLinkClicked(event){
   event.preventDefault();
   if (typeof $(this).attr('href') != 'undefined') {
     if ($(this).attr('href').length > 2 ){
-      loadCategoria($(this).attr('href'));
+      loadCategoria($(this).attr('_href'));
     }
   }
 }
@@ -219,6 +238,7 @@ function loadIndicado(path){
   content_div.fadeOut(500, function(){
     $(this).html('');
     $(this).load(content_path+'detalhes.html'+'?cachebust='+cachebust+' #candidate-content', function() {
+      IeHrefFix();
       updateOutlineHeight();
       $('#candidate-content-container').delay(500).fadeIn(1000);
     });
@@ -227,7 +247,7 @@ function loadIndicado(path){
 function menuitemClicked(event){
   // console.log('menuitemClicked');
   var   link = $(this)
-      , item_nome = link.attr('href').substring(1)
+      , item_nome = link.attr('_href').substring(1)
       , item = $('#link-'+item_nome)
       , espera = 0;
   if (link.attr('id') == 'link-votacao') { return true; }
@@ -328,6 +348,7 @@ function backClicked(event){
 function loaded(){
   var page_name = body_element.data('page-name');
   previous_selected_section = page_name;
+  IeHrefFix();
   $('#stage').addClass('loaded');
   $('#stage').css('visibility','visible');
   if (html_element.hasClass('ie6')){
