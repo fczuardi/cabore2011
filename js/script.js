@@ -88,9 +88,9 @@ function desceFichas(name){
   body_element.removeClass('section-'+previous_selected_section);
   body_element.addClass('animacao');
   body_element.addClass('section-'+name);
-  if (body_element.data('page-name') != item_descida){
+  // if (body_element.data('page-name') != item_descida){
     loadSection(name);
-  }
+  // }
   previous_selected_section = name;
   
   menuitem = $('#link-'+name);
@@ -252,7 +252,7 @@ function menuitemClicked(event){
       , espera = 0;
   if (link.attr('id') == 'link-votacao') { return true; }
   event.preventDefault();
-  if (item.hasClass('selected')){ return false; }
+  if (item.hasClass('selected')&&(item_nome != 'indicados')){ return false; }
   if(navigation_elements.hasClass('selected')){
     //some other link was selected
     navigation_elements.removeClass('selected');
@@ -360,9 +360,7 @@ function loaded(){
    // else {
   if(true) {
     item_descida = page_name;
-    // $('#page-content').fadeOut();
     $('#link-'+page_name).addClass('selected');
-    // setTimeout(sobeFichas, 1000);
     desceFichas(page_name);
   }
   if (body_element.hasClass('section-home')){
