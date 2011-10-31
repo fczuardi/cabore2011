@@ -148,9 +148,10 @@ function updateOutlineHeight(){
   setTimeout(function(){
     if($('#candidate-content-container').length > 0){
       $('#main').height($('#candidate-content-container').innerHeight());
+      $('#stage').css('height',$('#candidate-content-container').innerHeight()+200+185);
     } else {
       $('#main').attr('style','');
-      // $('#main').height($('#main').height());
+      updateDimensions();
     }
   }, 10);
 }
