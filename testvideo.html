@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 lte8 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 lte8 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <script type="text/javascript">
+     var canPlay = false;
+     var v = document.createElement('video');
+     if(v.canPlayType && v.canPlayType('video/mp4').replace(/no/, '')) {
+         canPlay = true;
+     }
+
+     alert(canPlay);
+
+  </script>
+</head>
+
+<body>
+
+<!-- first try HTML5 playback: if serving as XML, expand `controls` to `controls="controls"` and autoplay likewise -->
+<!-- warning: playback does not work on iOS3 if you include the poster attribute! fixed in iOS4.0 -->
+<video width="640" height="360" controls>
+	<!-- MP4 must be first for iPad! -->
+	<source src="http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334cb3a8f50558/1319841801668mp4.mp4" type="video/mp4" /><!-- Safari / iOS video    -->
+	<!-- fallback to Flash: -->
+	<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=640&playerHeight=360&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b43347df8c01334cb1283a054b"></script>
+</video>
+<!-- you *must* offer a download link as they may be able to play the file locally. customise this bit all you want -->
+<p>	<strong>Download Video:</strong>
+	Closed Format:	<a href="http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334cb3a8f50558/1319841801668mp4.mp4">"MP4"</a>
+</p>
+
+</body>
+</html>
