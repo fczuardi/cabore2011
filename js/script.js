@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-var cachebust = 'v18';
+var cachebust = 'v19';
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
