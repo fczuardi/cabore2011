@@ -74,6 +74,7 @@ body strong {
   margin-bottom:26px;
   width: 405px;
   height: 228px;
+  background:#000;
   overflow:hidden;
   position:relative;
 }
