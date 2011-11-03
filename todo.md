@@ -9,35 +9,40 @@
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334cb3a8f50558/1319841801668mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334cb3a4cc0557/1319841800185mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334cb3b2030559/1319841802705mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334cb3d9f50560/1319841796647mp4_640_330_7362592751684816167.jpg
+  - i330:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334cb3d9f50560/1319841796647mp4_640_330_7362592751684816167.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334cb3d97d055b/1319841796647mp4_360_240_5521660714032405613.jpg
 
 - Indicados Caboré 2011- Globo News
   - 240p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334cabda4e20da/1319841290202mp4.mp4
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334cabe77d20dc/1319841293344mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334cabed2f20dd/1319841294427mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334cabe32a20db/1319841291051mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334cac10ed20e4/1319841287484mp4_640_330_6712593607220123213.jpg
+  - i330: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334cac10ed20e4/1319841287484mp4_640_330_6712593607220123213.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334cac108220df/1319841287484mp4_360_240_8246387291670545351.jpg
 
 - Indicados Caboré 2011 - Aktuell
   - 240p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334caaf168053e/1319841230672mp4.mp4
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334caadf9c053b/1319841225890mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334caae633053c/1319841226896mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334caaee85053d/1319841228599mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334cab17900545/1319841223448mp4_640_330_1920323938360121557.jpg
+  - i330: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334cab17900545/1319841223448mp4_640_330_1920323938360121557.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334cab171f0540/1319841223448mp4_360_240_3340201408308984327.jpg
 
 - Indicados Caboré 2011 - AgênciaClick Isobar
   - 240p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334ca78f500524/1319841008878mp4.mp4
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334ca7866f0522/1319841006353mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334ca78c1a0523/1319841007430mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334ca7984e0525/1319841009703mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334ca7c477052c/1319841003477mp4_640_330_8238245633898739078.jpg
+  - i330: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334ca7c477052c/1319841003477mp4_640_330_8238245633898739078.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334ca7c3fc0527/1319841003477mp4_360_240_1440621795185057444.jpg
 
 - Indicados Caboré 2011 - Valor Econômico
   - 240p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b5331f80a901334ca1416933db/1319840595775mp4.mp4
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b5331f80a901334ca1368133d9/1319840592723mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b5331f80a901334ca1327933d8/1319840591464mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b5331f80a901334ca13e5933da/1319840593759mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b5331f80a901334ca167d533e2/1319840588953mp4_640_330_540596488413494998.jpg
+  - i330: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b5331f80a901334ca167d533e2/1319840588953mp4_640_330_540596488413494998.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b5331f80a901334ca1676f33dd/1319840588953mp4_360_240_7757232750234881930.jpg
 
 - Indicados Caboré 2011 - Revista Piauí
   - 240p: 
@@ -51,28 +56,34 @@
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c9d85342085/1319840350721mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c9d7e212083/1319840348619mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c9d78f22082/1319840346028mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c9da71c208c/1319840343635mp4_640_330_27913532493643360.jpg
+  - i330: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c9da71c208c/1319840343635mp4_640_330_27913532493643360.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c9da6bb2087/1319840343635mp4_360_240_4376565005691606706.jpg
+  
 
 - Indicados Caboré 2011 - METRO
   - 240p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334c9bf9bd04fc/1319840249731mp4.mp4
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334c9bf0d004fa/1319840247218mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334c9bf6a004fb/1319840248231mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334c9c032004fd/1319840250703mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334c9c22070504/1319840244827mp4_640_330_5831215802053481009.jpg
+  - i330: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334c9c22070504/1319840244827mp4_640_330_5831215802053481009.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b43347df8c01334c9c219104ff/1319840244827mp4_360_240_441840024486245799.jpg
+  
 
 - Indicados Caboré 2011 - Marcelo Passos - Africa
   - 240p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c999496206e/1319840092384mp4.mp4
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c99a66b2071/1319840097086mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c99a25d2070/1319840095717mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c999d05206f/1319840093555mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c99c61f2079/1319840089398mp4_640_330_3795084775702457174.jpg
+  - i330: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c99c61f2079/1319840089398mp4_640_330_3795084775702457174.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c99c5c22074/1319840089398mp4_360_240_4748039985196728621.jpg
 
 - Indicados Caboré 2011 - Igor Puga - ID\TBWA
   - 240p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c96c4d62060/1319839908640mp4.mp4
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c96d1ed2063/1319839911754mp4.mp4
   - 480p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c96ce822062/1319839910808mp4.mp4
   - 720p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b6332bbfdd01334c96cad02061/1319839909303mp4.mp4
-  - img:  http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c96e5c4206a/1319839907121mp4_640_330_3698595460971290773.jpg
+  - i330: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c96e5c4206a/1319839907121mp4_640_330_3698595460971290773.jpg
+  - i240: http://mm.sambatech.com.br/00238F/account/43/1/media/thumbnail/2c9f94b6332bbfdd01334c96e5612065/1319839907121mp4_360_240_275687159947321862.jpg
 
 - 
   - 240p: 
