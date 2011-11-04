@@ -17,6 +17,7 @@ function cardAnimationInit(){
     event.preventDefault();  
 		changeCardOrder(2);
 	});
+	setTimeout(updateOutlineHeight, 10);
 }
 
 function picTouchStart(event){

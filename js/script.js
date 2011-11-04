@@ -145,15 +145,13 @@ function fichaTransitioned(event){
   }
 }
 function updateOutlineHeight(){
-  setTimeout(function(){
-    if($('#candidate-content-container').length > 0){
-      $('#main').height($('#candidate-content-container').innerHeight());
-      $('#stage').css('height',$('#candidate-content-container').innerHeight()+200+185);
-    } else {
-      $('#main').attr('style','');
-      updateDimensions();
-    }
-  }, 500);
+  if($('#candidate-content-container').length > 0){
+    $('#main').height($('#candidate-content-container').innerHeight());
+    $('#stage').css('height',Math.max($(window).height(),$('#candidate-content-container').innerHeight()+200+185));
+  } else {
+    $('#main').height(Math.max(325,$('#page-content').innerHeight()));
+    updateDimensions();
+  }
 }
 
 function IeHrefFix(){
@@ -175,13 +173,13 @@ function IeHrefFix(){
 function loadSection(name){
   $('#page-content').html('');
   $('#page-content').load('/content/'+name+'.html'+'?cachebust='+cachebust, function() {
-    $('#page-content').fadeIn();
+    updateOutlineHeight();
+    $('#page-content').fadeIn(500);
     IeHrefFix();
     body_element.data('page-name', item_descida);
     body_element.removeClass('detail');
     body_element.removeClass('categoria');
     current_category = '';
-    updateOutlineHeight();
     if (body_element.hasClass('section-indicados')){
       $('#page-content ul a').bind('click',categoriaLinkClicked);
     }
@@ -221,13 +219,13 @@ function loadCategoria(path){
       if (template_name == 'lista'){
         $('#page-content .card .content a').bind('click',categoriaLinkClicked);
         body_element.addClass('categoria');
+        updateOutlineHeight();
       }else{
         body_element.addClass('detail');
         cardAnimationInit(); //função definida em card-switch-animation.js
         // $('.video-link').click(videoClicked);
         insertVideoEmbeds();
       }
-      updateOutlineHeight();
       $('#page-content').fadeIn(500);
     });
   });
@@ -279,9 +277,9 @@ function loadIndicado(path){
     $(this).html('');
     $(this).load(content_path+'detalhes.html'+'?cachebust='+cachebust+' #candidate-content', function() {
       IeHrefFix();
-      updateOutlineHeight();
       insertVideoEmbeds();
       // $('.video-link').click(videoClicked);
+      updateOutlineHeight();
       $('#candidate-content-container').delay(500).fadeIn(1000);
     });
   })
