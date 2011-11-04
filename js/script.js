@@ -153,7 +153,7 @@ function updateOutlineHeight(){
       $('#main').attr('style','');
       updateDimensions();
     }
-  }, 10);
+  }, 500);
 }
 
 function IeHrefFix(){
