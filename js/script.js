@@ -192,6 +192,7 @@ function loadSection(name){
   });
 }
 function insertVideoEmbeds(){
+  if ($('#candidate-content .video-container').length < 1) {return }
   var src = $('#candidate-content .video-container').data('scriptsrc');
   var s = document.createElement('script');
   $('#candidate-content .video-container')[0].appendChild(s);
