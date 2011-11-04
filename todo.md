@@ -4,6 +4,51 @@
 
 # Videos
 
+novas URLs:
+
+Paranoid
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b43350dcc001336af0959119a6"></script>
+Ana Maria Nubié
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b53352e38d01336aee6ab71708"></script>
+Nextel
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b43350dcc001336ac381c61972"></script>
+Bradesco
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b53352e38d01336ab04d401651"></script>
+AD Studio
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b53352e38d01336aaabeac1647"></script>
+Fernando Diniz
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b6332bbfdd0133604c5b562ef7"></script>
+Loducca
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b6332bbfdd0133602b091d2e98"></script>
+Orlando Marques
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b53352e38d01335f43055907e6"></script>
+Revista Piauí
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b53352e38d01335f3bc0d007de"></script>
+Patricia Muratori
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b53352e38d01335f1aae27079a"></script>
+Marcello Penna
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b6332bbfdd01335af0179127d0"></script>
+Anselmo Ramos
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b6332bbfdd01335a8547fe2742"></script>
+Maria Luiza
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b43347df8c01334cb1283a054b"></script>
+Globo News
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b6332bbfdd01334ca9589c20d6"></script>
+Aktuell
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b43347df8c01334ca7028f051f"></script>
+Metro
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b6332bbfdd01334c99ba902072"></script>
+Marcelo Passos
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b6332bbfdd01334c97a9c8206b"></script>
+Igor Puga
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b43347df8c01334c957fd204eb"></script>
+
+Valor Econômico
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b43347df8c01334c9f3c3c0512"></script>
+Mood
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b6332bbfdd01334c9c037f207f"></script>
+
+
 - Maria Luiza - Unilever
   - 240p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334cb39f1b0556/1319841799400mp4.mp4
   - 360p: http://mm.sambatech.com.br/00238F/account/43/1/media/video/2c9f94b43347df8c01334cb3a8f50558/1319841801668mp4.mp4

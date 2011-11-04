@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-var cachebust = 'v21';
+var cachebust = 'v22';
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
@@ -191,6 +191,12 @@ function loadSection(name){
     }
   });
 }
+function insertVideoEmbeds(){
+  var src = $('#candidate-content .video-container').data('scriptsrc');
+  var s = document.createElement('script');
+  $('#candidate-content .video-container')[0].appendChild(s);
+  s.src = src;
+}
 function loadCategoria(path){
   var content_path = path.replace('indicados', 'content');
   var path_parts = content_path.split('/');
@@ -217,7 +223,8 @@ function loadCategoria(path){
       }else{
         body_element.addClass('detail');
         cardAnimationInit(); //função definida em card-switch-animation.js
-        $('.video-link').click(videoClicked);
+        // $('.video-link').click(videoClicked);
+        insertVideoEmbeds();
       }
       updateOutlineHeight();
       $('#page-content').fadeIn(500);
@@ -272,7 +279,8 @@ function loadIndicado(path){
     $(this).load(content_path+'detalhes.html'+'?cachebust='+cachebust+' #candidate-content', function() {
       IeHrefFix();
       updateOutlineHeight();
-      $('.video-link').click(videoClicked);
+      insertVideoEmbeds();
+      // $('.video-link').click(videoClicked);
       $('#candidate-content-container').delay(500).fadeIn(1000);
     });
   })
