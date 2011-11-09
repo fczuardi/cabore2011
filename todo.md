@@ -18,6 +18,29 @@ novas URLs:
 
 - Marcelo Cataldi (Fox)
 
+Romeo Busarello
+<div  class="video-container" 
+      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b633702de0013383eb16a50f04">
+</div>
+
+Paulo Giovanni
+<div  class="video-container" 
+      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b4336b74da01337fa24e8e0f11">
+</div>
+
+Eduardo Lorenzi
+<div  class="video-container" 
+      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b4336b74da01337f5e95a10eb8">
+</div>
+
+Pedro Cruz
+<div  class="video-container" 
+      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b5336b82c501337f5ac6a20bcf">
+</div>
+
+
+
+
 Bradesco
 <div  class="video-container" 
       data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b5337f7694013383f2e4a30445">
@@ -147,26 +170,6 @@ Igor Puga
 Orlando Marques
 <div  class="video-container" 
       data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b53352e38d01335f43055907e6">
-</div>
-
-Romeo Busarello
-<div  class="video-container" 
-      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b633702de0013383eb16a50f04">
-</div>
-
-Paulo Giovanni
-<div  class="video-container" 
-      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b4336b74da01337fa24e8e0f11">
-</div>
-
-Eduardo Lorenzi
-<div  class="video-container" 
-      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b4336b74da01337f5e95a10eb8">
-</div>
-
-Pedro Cruz
-<div  class="video-container" 
-      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b5336b82c501337f5ac6a20bcf">
 </div>
 
 - Maria Luiza - Unilever
