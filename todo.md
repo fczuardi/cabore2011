@@ -18,6 +18,13 @@ novas URLs:
 
 - Marcelo Cataldi (Fox)
 
+Fulano filmes
+<script src="http://player.sambatech.com.br/current/samba-player.js?playerWidth=640&playerHeight=360&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b433b8f86c0133d06b30cc166a"></script>
+
+<div  class="video-container" 
+      data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b433b8f86c0133d06b30cc166a">
+</div>
+
 Romeo Busarello
 <div  class="video-container" 
       data-scriptsrc="http://player.sambatech.com.br/current/samba-player.js?playerWidth=405&playerHeight=228&ph=17e62166fc8586dfa4d1bc0e1742c08b&m=2c9f94b633702de0013383eb16a50f04">
