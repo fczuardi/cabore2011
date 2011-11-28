@@ -390,7 +390,8 @@ html.lte8 .card .content{
 .section-home .card .content{
 /*  background-image:url(../img/carta-img-home.png);*/
 /*  background-image:url(../img/carta-img-vote-aqui.png);*/
-  background-image:url(../img/votacao-encerrada-o.png);
+/*  background-image:url(../img/votacao-encerrada-o.png);*/
+  background-image:url(../img/votacao-encerrada-estatua-o.png);  
 }
 .section-cabore .card .content {
   background-image:url(../img/carta-img-trofeu.png);
