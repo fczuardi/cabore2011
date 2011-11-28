@@ -1,7 +1,7 @@
 /* Author: 
 
 */
-var cachebust = 'v26';
+var cachebust = 'v29';
 var sombra_bg = '<div id="sombra-top"><img src="/img/sombra-top.png" /></div><div id="sombra-bottom"><img src="/img/sombra-bottom.png" /></div>';
 var estrela_ie = '<span style="font-family:Wingdings;font-size:16px;">¬</span>';
 var html_element,
@@ -290,7 +290,7 @@ function menuitemClicked(event){
       , item_nome = link.attr('_href').substring(1)
       , item = $('#link-'+item_nome)
       , espera = 0;
-  if (link.attr('id') == 'link-votacao') { return true; }
+  // if (link.attr('id') == 'link-votacao') { return true; }
   event.preventDefault();
   if (item.hasClass('selected')&&(item_nome != 'indicados')){ return false; }
   if(navigation_elements.hasClass('selected')){
