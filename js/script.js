@@ -151,6 +151,7 @@ function updateOutlineHeight(){
   } else {
     $('#main').height(Math.max(325,$('#page-content').innerHeight()));
     updateDimensions();
+    setTimeout(updateDimensions, 1000)
   }
 }
 

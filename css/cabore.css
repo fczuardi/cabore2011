@@ -131,6 +131,35 @@ h4{
 	text-align: center;
 	padding-top: 90px;
 }
+.section-votacao h4{
+	text-align: left;
+  text-transform:uppercase;
+  top:140px;
+  padding-left:290px;
+  padding-top:0;
+  width:447;
+  position:relative;
+}
+.section-votacao h4.gold{
+	text-align: center;
+  color: #AD9B3F;
+  padding-bottom: 0;
+  padding-left: 0;
+  position: inherit;
+  width: auto;
+  top:0;
+  padding-top:0;
+}
+.section-votacao .card{
+  position:relative;
+  top:0;
+  left:60px;
+  margin-bottom:40px;
+}
+.section-votacao .card .content a{
+  line-height: 14px;
+  padding-top: 212px;
+}
 .colunaDeTexto,
 .colunaDeTexto-comSidebar{
   padding: 48px;
