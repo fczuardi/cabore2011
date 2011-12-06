@@ -184,6 +184,8 @@ function loadSection(name){
     if (body_element.hasClass('section-indicados')){
       $('#page-content ul a').bind('click',categoriaLinkClicked);
     }
+    // if (body_element.hasClass('section-votacao')){
+    // }
     if (body_element.hasClass('section-home')){
       entraCartas();
       $('#carta-2 a').bind('click',menuitemClicked);
